@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_intensitas" value="name:id_intensitas;datatype:int,name:no_intensitas;datatype:int,name:keterangan;datatype:string" />
+</info>

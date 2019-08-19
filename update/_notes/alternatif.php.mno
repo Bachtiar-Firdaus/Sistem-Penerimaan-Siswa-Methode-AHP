@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_peserta" value="name:id_peserta;datatype:int,name:nama_peserta;datatype:string,name:result_peserta;datatype:real" />
+	<infoitem key="UD_rs_id" value="name:id_peserta;datatype:int,name:nama_peserta;datatype:string,name:result_peserta;datatype:real" />
+</info>

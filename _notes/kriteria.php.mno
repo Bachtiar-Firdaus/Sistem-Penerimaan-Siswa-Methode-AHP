@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_kriteria1" value="name:id_kriteria;datatype:int,name:kode_kriteria;datatype:string,name:nama_kriteria;datatype:string" />
+	<infoitem key="UD_rs_kriteria2" value="name:id_kriteria;datatype:int,name:kode_kriteria;datatype:string,name:nama_kriteria;datatype:string" />
+	<infoitem key="UD_rs_intensitas" value="name:id_intensitas;datatype:int,name:no_intensitas;datatype:int,name:keterangan;datatype:string" />
+</info>
