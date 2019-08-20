@@ -1,4 +1,4 @@
-<div class="content-wrapper" style="padding:10px;">
+
 	<div class="row">
 		<div class="col-xs-12">
             <div class="box">
@@ -97,4 +97,4 @@
 		<!-- /.modal-content -->
 	</div>
 	<!-- /.modal-dialog -->
-</div>
+

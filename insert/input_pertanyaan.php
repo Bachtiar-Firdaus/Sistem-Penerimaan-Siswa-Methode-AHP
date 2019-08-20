@@ -1,4 +1,4 @@
-                <th>Alasan Tidak lanjut sekolah</th>
+
 <link href="assetss/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="assetss/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
 <link href="assetss/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
