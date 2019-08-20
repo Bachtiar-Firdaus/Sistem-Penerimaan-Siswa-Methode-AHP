@@ -38,6 +38,25 @@
 
           <a href="#">
 
+            <i class="fa fa-edit"></i> <span>kelola pendaftaran</span>
+
+            <span class="pull-right-container">
+
+              <i class="fa fa-angle-left pull-right"></i>            </span>          </a>
+
+          <ul class="treeview-menu">
+
+            <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>calon siswa</a></li>
+            <li><a href="?page=insert/input_pertanyaan"><i class="fa fa-circle-o"></i>input pertanyaan</a></li>
+            <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>upload berkas</a></li>
+          </ul>
+
+        </li>
+
+        <li class="treeview">
+
+          <a href="#">
+
             <i class="fa fa-edit"></i> <span>Master Data</span>
 
             <span class="pull-right-container">
@@ -55,6 +74,7 @@
 
         <li><a href="?page=kriteria"><i class="fa fa-table"></i> <span>Hitung Kriteria</span></a> </li>
         <li><a href="?page=hitung_alternatif"><i class="fa fa-table"></i> <span>Hitung Alternatif</span></a> </li>        
+        <li><a href="?page=insert/pengumuman"><i class="fa fa-table"></i> <span>Pengumuman</span></a> </li>        
 
 
       </ul>
