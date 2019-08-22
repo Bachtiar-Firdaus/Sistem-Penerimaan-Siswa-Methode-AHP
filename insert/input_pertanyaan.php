@@ -2,6 +2,13 @@
 <link href="assetss/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="assetss/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
 <link href="assetss/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<?php
+// Create database connection using config file
+include_once("\insert\config.php");
+
+// Fetch all tbl_cs data from database
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_pertanyaan ORDER BY id DESC");
+?>
 
   <div class="row">
     <div class="col-xs-12">
@@ -22,13 +29,7 @@
           .modal-dialog{
             width: 97%;
         </style>
-        <section class="container-fluid" style="overflow-y: auto; overflow-x: scroll;"><div class="dropdown">
-          <select>
-  <option value="volvo">pilih siswa</option>
-  <option value="saab">dayat</option>
-  <option value="opel">ega</option>
-</select>
-        <button type="button"  data-toggle="modal" data-target="#myModal"></i>INPUT PERTANYAAN</button>
+        <a href="insert\add_ip.php"><button>INPUT PERTANYAAN</button></a> 
         <br><br>
 
         <table border="1">
@@ -39,18 +40,15 @@
             <td>action</td>
           </tr>
 
-          <tr>
-            <td>1</td>
-            <td>dayat</td>
-            <td><button>cetak</button></td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td>ega</td>
-            <td><button>cetak</button></td>
-          </tr>
-
+    <?php  
+    $no = "1";
+    while($user_data = mysqli_fetch_array($result)) {         
+        echo "<tr>";      
+        echo "<td>".$no++."</td>";
+        echo "<td>".$user_data['nama_cs']."</td>";
+        echo "<td><a href='/program_april/insert/edit_ip.php?id=$user_data[id]'>Cetak</a>";        
+    }
+    ?>
         </table>
           </div> <br />
           

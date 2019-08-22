@@ -3,7 +3,7 @@
 include_once("config.php");
 
 // Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where con !='2'");
 ?>
 
 <html>
@@ -695,6 +695,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
         $result = mysqli_query($mysqli, "INSERT INTO tbl_pertanyaan(nama_cs,nama_a, nama_i, umur_a, umur_a_t, umur_i, umur_i_t, agama_a, agama_i, alamat_a_d, alamat_a_kec, alamat_a_kab, alamat_i_d, alamat_i_kec, alamat_i_kab, pekerjaan_a, pekerjaan_i, jumlah_s, keadaan_lingkungan1, keadaan_lingkungan2, keadaan_lingkungan3, keadaan_lingkungan4, keadaan_lingkungan5a, keadaan_lingkungan5b, keadaan_lingkungan5c, keadaan_lingkungan6, motivasi_1, motivasi_2, motivasi_3, motivasi_4, motivasi_5, motivasi_6, motivasi_7, penggunaan_1, penggunaan_2, penggunaan_3, penggunaan_4, penggunaan_5, penggunaan_6, evaluasi_1, evaluasi_2, evaluasi_3, evaluasi_4, evaluasi_5) VALUES ('$nama_cs','$nama_a', '$nama_i', '$umur_a', '$umur_a_t', '$umur_i', '$umur_i_t', '$agama_a', '$agama_i', '$alamat_a_d', '$alamat_a_kec', '$alamat_a_kab', '$alamat_i_d', '$alamat_i_kec', '$alamat_i_kab', '$pekerjaan_a', '$pekerjaan_i', '$jumlah_s', '$keadaan_lingkungan1', '$keadaan_lingkungan2', '$keadaan_lingkungan3', '$keadaan_lingkungan4', '$keadaan_lingkungan5a', '$keadaan_lingkungan5b', '$keadaan_lingkungan5c', '$keadaan_lingkungan6', '$motivasi_1', '$motivasi_2', '$motivasi_3', '$motivasi_4', '$motivasi_5', '$motivasi_6', '$motivasi_7', '$penggunaan_1', '$penggunaan_2', '$penggunaan_3', '$penggunaan_4', '$penggunaan_5', '$penggunaan_6', '$evaluasi_1', '$evaluasi_2', 'evaluasi_3', 'evaluasi_4', 'evaluasi_5')");
         // Show message when user added
         echo "User added successfully. <a href='http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan'>View tbl_pertanyaan</a>";
+        $result = mysqli_query($mysqli, "UPDATE tbl_cs SET con = '2' WHERE nama=$nama_cs");
     }
     ?>
 </body>

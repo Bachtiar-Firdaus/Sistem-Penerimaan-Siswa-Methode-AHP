@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 20 Agu 2019 pada 06.36
+-- Generation Time: 22 Agu 2019 pada 19.18
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,6 +19,102 @@ SET time_zone = "+00:00";
 --
 -- Database: `codegoo_ahp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_cs`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_cs` (
+`id` int(11) NOT NULL,
+  `nama` varchar(500) NOT NULL,
+  `jk` varchar(500) NOT NULL,
+  `ttl` varchar(500) NOT NULL,
+  `agama` varchar(500) NOT NULL,
+  `suku` varchar(500) NOT NULL,
+  `bahasa` varchar(500) NOT NULL,
+  `ald` varchar(500) NOT NULL,
+  `alk` varchar(500) NOT NULL,
+  `alko` varchar(500) NOT NULL,
+  `ltlsk` varchar(500) NOT NULL,
+  `pt` varchar(500) NOT NULL,
+  `atls` varchar(500) NOT NULL,
+  `km` varchar(500) NOT NULL,
+  `mn` varchar(500) NOT NULL,
+  `pb` varchar(500) NOT NULL,
+  `bpbd` varchar(500) NOT NULL,
+  `gp` varchar(500) NOT NULL,
+  `con` int(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_cs`
+--
+
+INSERT INTO `tbl_cs` (`id`, `nama`, `jk`, `ttl`, `agama`, `suku`, `bahasa`, `ald`, `alk`, `alko`, `ltlsk`, `pt`, `atls`, `km`, `mn`, `pb`, `bpbd`, `gp`, `con`) VALUES
+(4, '1000', '1', '00', '0', '00', '0', '00', '0', '0', '00', '0', '00', 'ya', 'ya', 'ya', '00', '0', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pertanyaan`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_pertanyaan` (
+`id` int(11) NOT NULL,
+  `nama_cs` varchar(500) NOT NULL,
+  `nama_a` varchar(500) NOT NULL,
+  `nama_i` varchar(500) NOT NULL,
+  `umur_a` varchar(500) NOT NULL,
+  `umur_a_t` varchar(500) NOT NULL,
+  `umur_i` varchar(500) NOT NULL,
+  `umur_i_t` varchar(500) NOT NULL,
+  `agama_a` varchar(500) NOT NULL,
+  `agama_i` varchar(500) NOT NULL,
+  `alamat_a_d` varchar(500) NOT NULL,
+  `alamat_a_kec` varchar(500) NOT NULL,
+  `alamat_a_kab` varchar(500) NOT NULL,
+  `alamat_i_d` varchar(500) NOT NULL,
+  `alamat_i_kec` varchar(500) NOT NULL,
+  `alamat_i_kab` varchar(500) NOT NULL,
+  `pekerjaan_a` varchar(500) NOT NULL,
+  `pekerjaan_i` varchar(500) NOT NULL,
+  `jumlah_s` varchar(500) NOT NULL,
+  `keadaan_lingkungan1` varchar(500) NOT NULL,
+  `keadaan_lingkungan2` varchar(500) NOT NULL,
+  `keadaan_lingkungan3` varchar(500) NOT NULL,
+  `keadaan_lingkungan4` varchar(500) NOT NULL,
+  `keadaan_lingkungan5a` varchar(500) NOT NULL,
+  `keadaan_lingkungan5b` varchar(500) NOT NULL,
+  `keadaan_lingkungan5c` varchar(500) NOT NULL,
+  `keadaan_lingkungan6` varchar(500) NOT NULL,
+  `motivasi_1` varchar(500) NOT NULL,
+  `motivasi_2` varchar(500) NOT NULL,
+  `motivasi_3` varchar(500) NOT NULL,
+  `motivasi_4` varchar(500) NOT NULL,
+  `motivasi_5` varchar(500) NOT NULL,
+  `motivasi_6` varchar(500) NOT NULL,
+  `motivasi_7` varchar(500) NOT NULL,
+  `penggunaan_1` varchar(500) NOT NULL,
+  `penggunaan_2` varchar(500) NOT NULL,
+  `penggunaan_3` varchar(500) NOT NULL,
+  `penggunaan_4` varchar(500) NOT NULL,
+  `penggunaan_5` varchar(500) NOT NULL,
+  `penggunaan_6` varchar(500) NOT NULL,
+  `evaluasi_1` varchar(500) NOT NULL,
+  `evaluasi_2` varchar(500) NOT NULL,
+  `evaluasi_3` varchar(500) NOT NULL,
+  `evaluasi_4` varchar(500) NOT NULL,
+  `evaluasi_5` varchar(500) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_pertanyaan`
+--
+
+INSERT INTO `tbl_pertanyaan` (`id`, `nama_cs`, `nama_a`, `nama_i`, `umur_a`, `umur_a_t`, `umur_i`, `umur_i_t`, `agama_a`, `agama_i`, `alamat_a_d`, `alamat_a_kec`, `alamat_a_kab`, `alamat_i_d`, `alamat_i_kec`, `alamat_i_kab`, `pekerjaan_a`, `pekerjaan_i`, `jumlah_s`, `keadaan_lingkungan1`, `keadaan_lingkungan2`, `keadaan_lingkungan3`, `keadaan_lingkungan4`, `keadaan_lingkungan5a`, `keadaan_lingkungan5b`, `keadaan_lingkungan5c`, `keadaan_lingkungan6`, `motivasi_1`, `motivasi_2`, `motivasi_3`, `motivasi_4`, `motivasi_5`, `motivasi_6`, `motivasi_7`, `penggunaan_1`, `penggunaan_2`, `penggunaan_3`, `penggunaan_4`, `penggunaan_5`, `penggunaan_6`, `evaluasi_1`, `evaluasi_2`, `evaluasi_3`, `evaluasi_4`, `evaluasi_5`) VALUES
+(10, '1000', 'q', 'q', 'qq', 'q', 'q', 'qq', 'q', 'q', 'qq', 'q', 'qq', 'q', 'q', 'qq', 'q', 'qq', 'qq', 'b. kurang padat', 'b. Semi permanen, bangunan setengah tembok, lantai semen', 'b. listrik tetangga', 'b. sumur bor', 'q', 'q', 'q', 'b. sekolah', 'b. ragu - ragu', 'b. ragu - ragu', 'b. ragu - ragu', 'b. Semi permanen, bangunan setengah tembok, lantai semen', 'b. Mencoba mengikuti sesuai dengan bimbingan pengasuh dan instruktur', 'b. Mengembangkan wirausaha bersama kelompok', 'b. Digunakan bekerjasama dengan kelompok / dunia usaha', 'b. perkebunan', 'b. puskesmas', 'b. penjahit pakaian', 'b. keuangan', 'b. peralatan pokok', 'b. PSM/Orsos/karang taruna dll', 'q', 'q', 'evaluasi_3', 'evaluasi_4', 'evaluasi_5');
 
 -- --------------------------------------------------------
 
@@ -58,16 +154,15 @@ CREATE TABLE IF NOT EXISTS `tb_kriteria` (
   `kode_kriteria` varchar(2) NOT NULL,
   `nama_kriteria` varchar(32) NOT NULL,
   `nilai_kriteria` double NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_kriteria`
 --
 
 INSERT INTO `tb_kriteria` (`id_kriteria`, `kode_kriteria`, `nama_kriteria`, `nilai_kriteria`) VALUES
-(1, 'K1', 'usia', 0.1149591),
-(2, 'K2', 'pekerjaan', 0.4054834),
-(3, 'K3', 'status', 0.4795575);
+(1, 'K1', 'njnj', 0),
+(2, 'K2', 'kjkj', 0);
 
 -- --------------------------------------------------------
 
@@ -79,16 +174,7 @@ CREATE TABLE IF NOT EXISTS `tb_peserta` (
 `id_peserta` int(11) NOT NULL,
   `nama_peserta` varchar(32) NOT NULL,
   `result_peserta` double DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_peserta`
---
-
-INSERT INTO `tb_peserta` (`id_peserta`, `nama_peserta`, `result_peserta`) VALUES
-(1, 'daus', 0),
-(2, 'dayat', 0),
-(3, 'ega', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -101,16 +187,7 @@ CREATE TABLE IF NOT EXISTS `tb_result` (
   `kode_kriteria` varchar(3) NOT NULL,
   `id_peserta` int(11) NOT NULL,
   `nilai` double NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_result`
---
-
-INSERT INTO `tb_result` (`id_result`, `kode_kriteria`, `id_peserta`, `nilai`) VALUES
-(1, 'K1', 1, 0.1001443),
-(2, 'K1', 2, 0.3893218),
-(3, 'K1', 3, 0.5105339);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -143,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `temp_nilai` (
   `baris` int(11) NOT NULL,
   `kolom` int(11) NOT NULL,
   `nilai` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `temp_nilai`
@@ -151,14 +228,9 @@ CREATE TABLE IF NOT EXISTS `temp_nilai` (
 
 INSERT INTO `temp_nilai` (`id`, `baris`, `kolom`, `nilai`) VALUES
 (1, 1, 1, 1),
-(2, 1, 2, 0.3333333333333333),
-(3, 1, 3, 0.2),
-(4, 2, 1, 3),
-(5, 2, 2, 1),
-(6, 2, 3, 1),
-(7, 3, 1, 5),
-(8, 3, 2, 1),
-(9, 3, 3, 1);
+(2, 1, 2, 1),
+(3, 2, 1, 1),
+(4, 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -171,22 +243,7 @@ CREATE TABLE IF NOT EXISTS `temp_nilai_peserta` (
   `baris` int(11) NOT NULL,
   `kolom` int(11) NOT NULL,
   `nilai` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `temp_nilai_peserta`
---
-
-INSERT INTO `temp_nilai_peserta` (`id`, `baris`, `kolom`, `nilai`) VALUES
-(1, 1, 1, 1),
-(2, 1, 2, 0.3333333333333333),
-(3, 1, 3, 0.14285714285714285),
-(4, 2, 1, 3),
-(5, 2, 2, 1),
-(6, 2, 3, 1),
-(7, 3, 1, 7),
-(8, 3, 2, 1),
-(9, 3, 3, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -209,6 +266,18 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_cs`
+--
+ALTER TABLE `tbl_cs`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_pertanyaan`
+--
+ALTER TABLE `tbl_pertanyaan`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_intensitas`
@@ -257,6 +326,16 @@ ALTER TABLE `temp_nilai_peserta`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_cs`
+--
+ALTER TABLE `tbl_cs`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tbl_pertanyaan`
+--
+ALTER TABLE `tbl_pertanyaan`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `tb_intensitas`
 --
 ALTER TABLE `tb_intensitas`
@@ -265,17 +344,17 @@ MODIFY `id_intensitas` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT for table `tb_kriteria`
 --
 ALTER TABLE `tb_kriteria`
-MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tb_peserta`
 --
 ALTER TABLE `tb_peserta`
-MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tb_result`
 --
 ALTER TABLE `tb_result`
-MODIFY `id_result` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_result` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tb_users`
 --
@@ -285,12 +364,12 @@ MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `temp_nilai`
 --
 ALTER TABLE `temp_nilai`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `temp_nilai_peserta`
 --
 ALTER TABLE `temp_nilai_peserta`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
