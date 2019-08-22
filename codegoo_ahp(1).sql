@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22 Agu 2019 pada 19.18
+-- Generation Time: 22 Agu 2019 pada 21.26
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -45,15 +45,22 @@ CREATE TABLE IF NOT EXISTS `tbl_cs` (
   `pb` varchar(500) NOT NULL,
   `bpbd` varchar(500) NOT NULL,
   `gp` varchar(500) NOT NULL,
+  `nokk` varchar(500) NOT NULL,
+  `nik` varchar(500) NOT NULL,
+  `jurusan` varchar(500) NOT NULL,
+  `asrama` varchar(500) NOT NULL,
+  `lk` varchar(500) NOT NULL,
+  `lm` varchar(500) NOT NULL,
+  `ls` varchar(500) NOT NULL,
   `con` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_cs`
 --
 
-INSERT INTO `tbl_cs` (`id`, `nama`, `jk`, `ttl`, `agama`, `suku`, `bahasa`, `ald`, `alk`, `alko`, `ltlsk`, `pt`, `atls`, `km`, `mn`, `pb`, `bpbd`, `gp`, `con`) VALUES
-(4, '1000', '1', '00', '0', '00', '0', '00', '0', '0', '00', '0', '00', 'ya', 'ya', 'ya', '00', '0', 2);
+INSERT INTO `tbl_cs` (`id`, `nama`, `jk`, `ttl`, `agama`, `suku`, `bahasa`, `ald`, `alk`, `alko`, `ltlsk`, `pt`, `atls`, `km`, `mn`, `pb`, `bpbd`, `gp`, `nokk`, `nik`, `jurusan`, `asrama`, `lk`, `lm`, `ls`, `con`) VALUES
+(5, 'bachtiar firdaus', 'laki', 'palas, 31 maret 1997', 'islam', 'padang', 'jepang', 'palas aji', 'palas', 'kalianda', 's3', 's3', '-', 'tidak', 'tidak', 'tidak', 'pt. suka suka', '2m', 'nokk', 'nik', 'jurusan', 'asrama', 'LK_daus', 'LM_daus', 'LS_daus', 0);
 
 -- --------------------------------------------------------
 
@@ -329,7 +336,7 @@ ALTER TABLE `temp_nilai_peserta`
 -- AUTO_INCREMENT for table `tbl_cs`
 --
 ALTER TABLE `tbl_cs`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_pertanyaan`
 --

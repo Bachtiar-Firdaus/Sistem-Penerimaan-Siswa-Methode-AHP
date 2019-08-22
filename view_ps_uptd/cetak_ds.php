@@ -1,6 +1,6 @@
 <?php
 // Create database connection using config file
-include_once("\insert\config.php");
+include_once("config.php");
 
 // Fetch all tbl_cs data from database
 $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
@@ -39,12 +39,10 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
         echo "<td>".$no++."</td>";
         echo "<td>".$user_data['nama']."</td>"; 
         echo "<td>".$user_data['jurusan']."</td>"; 
-        echo "<td>".$user_data['alko']."</td></tr>";        
+        echo "<td>".$user_data['alko']."</td>";          
     }
     ?>
 </table><br><br>
-
-<a href="view_ps_uptd\cetak_ds.php" class="btn btn-primary">Cetak</a>
 
 </div>
 

@@ -1,7 +1,10 @@
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<?php
+// Create database connection using config file
+include_once("\insert\config.php");
 
- -->
-
+// Fetch all tbl_cs data from database
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+?>
 <style type="text/css">
 	tr, td,th{
 		padding: 10px;
@@ -27,82 +30,24 @@
 		<th>Nama</th>
 		<th>Jurusan</th>
 		<th>Kabupaten</th>
-		<th>Keterangan</th>
 		<th>Aksi</th>
 	</tr>
-	<tr>
-		<th>1</th>
-		<td>Ega Liyando</td>
-		<td>Menjahit</td>
-		<td>Kabupaten Waykanan</td>
-		<td></td>
-		<td>
-      <input type="button" class="btn btn-primary" value="Edit" data-toggle="modal" data-target="#modal-edit"
-            name="" id="">
-			<!-- <button class="btn btn-primary">Edit</button> -->
-			<button class="btn btn-danger">Hapus</button>
-		</td>
-	</tr>
+     </tr>
+    <?php  
+    $no = "1";
+    while($user_data = mysqli_fetch_array($result)) {         
+        echo "<tr>";     
+        echo "<td>".$no++."</td>";
+        echo "<td>".$user_data['nama']."</td>"; 
+        echo "<td>".$user_data['jurusan']."</td>"; 
+        echo "<td>".$user_data['alko']."</td>";  
+        echo "<td><a href='/program_april/view_ps_uptd/edit_ds.php?id=$user_data[id]'>Edit</a> | <a href='/program_april/view_ps_uptd/delete_ds.php?id=$user_data[id]'>Delete</a></td></tr>";        
+    }
+    ?>
 </table><br><br>
 
-<button class="btn btn-primary">Cetak</button>
+<a href="view_ps_uptd\cetak_ds.php" class="btn btn-primary">Cetak</a>
 
 </div>
 
 
-
-
-<!-- Modal -->
-<div class="modal fade" id="modal-edit">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Melengkapi data siswa</h4>
-      </div>
-      <div class="modal-body" style="overflow: scroll;">
-
-        
-
-         <form>
-            <div class="form-group">
-    <label for="exampleFormControlInput1">Nama</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama siswa">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlInput1">No kk</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama siswa">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Nik</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama siswa">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Jurusan</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama siswa">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Asrama</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama siswa">
-  </div>
-
-          </form>
-
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-
-<!-- akhir modal --><br><br>
