@@ -14,6 +14,8 @@
 	}
 </style>
 
+
+
 <div class="containeredit">
 
   <h1>Informasi</h1><br>
@@ -30,18 +32,24 @@
 	</tr>
 	<tr>
 
-<?php
-  $konek = mysqli_connect("localhost","root","","codegoo_ahp");
 
-  $query = "SELECT * FROM upload ORDER BY id_upload DESC";
-  $hasil = mysqli_query($konek, $query);
-$no = 1;
-  while ($r = mysqli_fetch_array($hasil)){
-    echo "<td>".$no++."</td>";
-    echo "<td>".$r['nama_file']."</td>";
-    echo "<td><a href=view_ps_uptd\simpan.php?file=$r[nama_file]\">Download File</a></td>";
-  }
-?>
+	
+
+
+<?php
+            $no=0;
+            $query = mysql_query("SELECT * FROM upload ORDER BY id_upload"); 
+            while($data = mysql_fetch_array($query)){
+            $no++
+        ?>
+    <tr>
+        <td><?=$no?></td>
+        <td><?php echo $data['nama_file']; ?></td>
+        <td><a href="view_ps_uptd\simpan.php?filename=<?=$data['nama_file']?>">Download</a></td>    
+    </tr>
+        <?php 
+        } 
+        ?>
 
 	</tr>
 </table><br><br>
