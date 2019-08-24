@@ -56,16 +56,31 @@ while($user_data = mysqli_fetch_array($result))
     <title>Cetak Pertanyaan</title>
 </head>
 
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+
 <body>
     <a href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">back</a>
     <br/><br/>
         <table border="0">
 
 
+<h3>Data Siswa Instrumen: <?php echo $nama_cs;?></h3>
 
-<select name = "nama_cs" >
-<option >nama siswa : <?php echo $nama_cs;?></option>
-</select>
 
       <table border="1">
     <tr>

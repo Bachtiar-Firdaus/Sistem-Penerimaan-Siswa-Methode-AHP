@@ -7,7 +7,22 @@
 <body>
     <a href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Go to Home</a>
     <br/><br/>
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
     <form action="add_cs.php" method="post" name="form1">
 
   <table border="1">

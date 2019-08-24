@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Agu 2019 pada 19.43
+-- Generation Time: 24 Agu 2019 pada 05.38
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -53,14 +53,15 @@ CREATE TABLE IF NOT EXISTS `tbl_cs` (
   `lm` varchar(500) NOT NULL,
   `ls` varchar(500) NOT NULL,
   `con` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_cs`
 --
 
 INSERT INTO `tbl_cs` (`id`, `nama`, `jk`, `ttl`, `agama`, `suku`, `bahasa`, `ald`, `alk`, `alko`, `ltlsk`, `pt`, `atls`, `km`, `mn`, `pb`, `bpbd`, `gp`, `nokk`, `nik`, `jurusan`, `asrama`, `lk`, `lm`, `ls`, `con`) VALUES
-(5, 'bachtiar firdaus', 'laki', 'palas, 31 maret 1997', 'islam', 'padang', 'jepang', 'palas aji', 'palas', 'kalianda', 's3', 's3', '-', 'tidak', 'tidak', 'tidak', 'pt. suka suka', '2m', 'nokk', 'nik', 'jurusan', 'asrama', 'LK_daus', 'LM_daus', 'LS_daus', 0);
+(5, 'bachtiar firdaus', 'laki', 'palas, 31 maret 1997', 'islam', 'padang', 'jepang', 'palas aji', 'palas', 'kalianda', 's3', 's3', '-', 'tidak', 'tidak', 'tidak', 'pt. suka suka', '2m', 'nokk', 'nik', 'jurusan', 'asrama', 'LK_daus', 'LM_daus', 'LS_daus', 0),
+(6, 'kn', 'kn', 'kn', 'kn', 'kn', 'kn', 'kn', 'kn', 'kn', 'k', 'nk', 'n', 'ya', 'ya', 'ya', 'nk', 'n', '32532', '2323', 'assasf', 'adfsdf', 'dfgdf', 'dsgdg', 'dfgdf', 0);
 
 -- --------------------------------------------------------
 
@@ -114,14 +115,15 @@ CREATE TABLE IF NOT EXISTS `tbl_pertanyaan` (
   `evaluasi_3` varchar(500) NOT NULL,
   `evaluasi_4` varchar(500) NOT NULL,
   `evaluasi_5` varchar(500) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_pertanyaan`
 --
 
 INSERT INTO `tbl_pertanyaan` (`id`, `nama_cs`, `nama_a`, `nama_i`, `umur_a`, `umur_a_t`, `umur_i`, `umur_i_t`, `agama_a`, `agama_i`, `alamat_a_d`, `alamat_a_kec`, `alamat_a_kab`, `alamat_i_d`, `alamat_i_kec`, `alamat_i_kab`, `pekerjaan_a`, `pekerjaan_i`, `jumlah_s`, `keadaan_lingkungan1`, `keadaan_lingkungan2`, `keadaan_lingkungan3`, `keadaan_lingkungan4`, `keadaan_lingkungan5a`, `keadaan_lingkungan5b`, `keadaan_lingkungan5c`, `keadaan_lingkungan6`, `motivasi_1`, `motivasi_2`, `motivasi_3`, `motivasi_4`, `motivasi_5`, `motivasi_6`, `motivasi_7`, `penggunaan_1`, `penggunaan_2`, `penggunaan_3`, `penggunaan_4`, `penggunaan_5`, `penggunaan_6`, `evaluasi_1`, `evaluasi_2`, `evaluasi_3`, `evaluasi_4`, `evaluasi_5`) VALUES
-(10, '1000', 'q', 'q', 'qq', 'q', 'q', 'qq', 'q', 'q', 'qq', 'q', 'qq', 'q', 'q', 'qq', 'q', 'qq', 'qq', 'b. kurang padat', 'b. Semi permanen, bangunan setengah tembok, lantai semen', 'b. listrik tetangga', 'b. sumur bor', 'q', 'q', 'q', 'b. sekolah', 'b. ragu - ragu', 'b. ragu - ragu', 'b. ragu - ragu', 'b. Semi permanen, bangunan setengah tembok, lantai semen', 'b. Mencoba mengikuti sesuai dengan bimbingan pengasuh dan instruktur', 'b. Mengembangkan wirausaha bersama kelompok', 'b. Digunakan bekerjasama dengan kelompok / dunia usaha', 'b. perkebunan', 'b. puskesmas', 'b. penjahit pakaian', 'b. keuangan', 'b. peralatan pokok', 'b. PSM/Orsos/karang taruna dll', 'q', 'q', 'evaluasi_3', 'evaluasi_4', 'evaluasi_5');
+(10, '1000', 'q', 'q', 'qq', 'q', 'q', 'qq', 'q', 'q', 'qq', 'q', 'qq', 'q', 'q', 'qq', 'q', 'qq', 'qq', 'b. kurang padat', 'b. Semi permanen, bangunan setengah tembok, lantai semen', 'b. listrik tetangga', 'b. sumur bor', 'q', 'q', 'q', 'b. sekolah', 'b. ragu - ragu', 'b. ragu - ragu', 'b. ragu - ragu', 'b. Semi permanen, bangunan setengah tembok, lantai semen', 'b. Mencoba mengikuti sesuai dengan bimbingan pengasuh dan instruktur', 'b. Mengembangkan wirausaha bersama kelompok', 'b. Digunakan bekerjasama dengan kelompok / dunia usaha', 'b. perkebunan', 'b. puskesmas', 'b. penjahit pakaian', 'b. keuangan', 'b. peralatan pokok', 'b. PSM/Orsos/karang taruna dll', 'q', 'q', 'evaluasi_3', 'evaluasi_4', 'evaluasi_5'),
+(11, 'kn', 'asdnm asdnm ', 'nm', ' nm', ' nm', ' ', 'mn ', 'nm', ' nm', ' nm', ' ', 'nm ', 'nm', ' nm', ' ', 'nm ', 'nm', ' nm', 'a. padat', 'a. Permanen, bangunan tembok, lantai keramik', 'a. listrik umum', 'a. ledeng', ' ', 'n nm', ' ', 'a. bekerja', 'a. ya', 'a. ya', 'a. ya', 'a. mengisi waktu luang', 'a. Memilih dan mengikuti bimbingan keterampilan yang ada', 'a. Kembali ke kampung, berwirausaha sesuai dengan keterampilan yang dimiliki', 'a. Digunakan sebagai modal dasar untuk berwirausaha dan bekerja sendiri', 'a. pertanian', 'a. sd', 'a. bengkel motor', 'a. Kemauan / semangat kemandirian', 'a. keterampilan kerja', 'a. aparat desa', '', '', 'evaluasi_3', 'evaluasi_4', 'evaluasi_5');
 
 -- --------------------------------------------------------
 
@@ -214,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `tb_users` (
 --
 
 INSERT INTO `tb_users` (`user_id`, `fullname`, `username`, `password`) VALUES
-(1, 'Muhammad Iqbal', '1', '*01A6717B58F');
+(1, 'pengguna', '1', '*01A6717B58F');
 
 -- --------------------------------------------------------
 
@@ -363,12 +365,12 @@ ALTER TABLE `upload`
 -- AUTO_INCREMENT for table `tbl_cs`
 --
 ALTER TABLE `tbl_cs`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tbl_pertanyaan`
 --
 ALTER TABLE `tbl_pertanyaan`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `tb_intensitas`
 --

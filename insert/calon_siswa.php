@@ -7,14 +7,31 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 ?>
 
 <html>
+
 <head>    
     <title>IDENTIFIKASI CALON SISWA</title>
 </head>
 
 <body>
+    <style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
 <a href="insert/add_cs.php">Tambah</a><br/><br/>
 
-    <table width='80%' border=1>
+    <table class="tableee" border=1>
     <tr>
                 <th>Nama</th>
                 <th>Jenis Kelamin</th>

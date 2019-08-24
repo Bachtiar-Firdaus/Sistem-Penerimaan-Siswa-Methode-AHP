@@ -76,50 +76,38 @@ if (isset($_POST['username'])) {
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" type="text/css" href="stylelogin.css">
   <style>
 	body {
 		margin-top:50px;
 	}
   </style>
 </head>
-<body class="hold-transition login-page">
-<div class="row">
-<div class="container">
- <div class="col-md-4">
-    <div class="login-box">
-      <div class="login-logo">
-      <div class="callout callout-info">
-         <b>AHP</b> System
-      </div>  
-      </div>
-      <!-- /.login-logo -->
-      <div class="login-box-body">
-        <p class="login-box-msg">Silahkan masukkan Username dan Password</p>
+
+<h1>Program SPK</h1>
+
+  <div class="kotak_login">
+    <p class="tulisan_login">Silahkan login</p>
+
+    <form action="<?php echo $loginFormAction; ?>" method="POST" name="login" autocomplete="off">
+      <label>Username</label>
+      <input type="text" name="username" class="form_login" placeholder="Username atau email ..">
+
+      <label>Password</label>
+      <input type="password" name="password" class="form_login" placeholder="Password ..">
+
+      
+      <button type="submit" name="submit" class="btn btn-info btn-block btn-flat">Sign In</button>
+
+      <br/>
+      <br/>
+      <center>
+        <a class="link" href="https://www.malasngoding.com">kembali</a>
+      </center>
+    </form>
     
-        <form action="<?php echo $loginFormAction; ?>" method="POST" name="login" autocomplete="off">
-          <div class="form-group has-feedback">
-            <input type="text" name="username" class="form-control" placeholder="Username">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-          </div>
-          <div class="form-group has-feedback">
-            <input type="password" name="password" class="form-control" placeholder="Password">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
-          <div class="row">
-            <div class="col-xs-8">
-              <div class="checkbox icheck">
-                <label>
-                  <input type="checkbox"> Remember Me
-                </label>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" name="submit" class="btn btn-info btn-block btn-flat">Sign In</button>
-            </div>
-            <!-- /.col -->
-          </div>
-        </form>
+  </div>
+
     
         
       </div>

@@ -34,10 +34,27 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_pertanyaan ORDER BY id DESC")
 
         <table border="1">
 
+          <style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+
           <tr>
-            <td>no</td>
-            <td>nama</td>
-            <td>action</td>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Action</th>
           </tr>
 
     <?php  

@@ -38,7 +38,7 @@
 
           <a href="#">
 
-            <i class="fa fa-edit"></i> <span>kelola pendaftaran</span>
+            <i class="fa fa-edit"></i> <span>Keloa Pendaftaran</span>
 
             <span class="pull-right-container">
 
@@ -46,9 +46,9 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>calon siswa</a></li>
-            <li><a href="?page=insert/input_pertanyaan"><i class="fa fa-circle-o"></i>input pertanyaan</a></li>
-            <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>upload berkas</a></li>
+            <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>Calon Siswa</a></li>
+            <li><a href="?page=insert/input_pertanyaan"><i class="fa fa-circle-o"></i>Input Pertanyaan</a></li>
+            <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>Upload Berkas</a></li>
           </ul>
 
         </li>

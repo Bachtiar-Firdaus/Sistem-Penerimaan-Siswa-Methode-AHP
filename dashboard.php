@@ -240,29 +240,14 @@ $totalRows_rs_users = mysql_num_rows($rs_users);
         <div class="col-md-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"> <?php
-	//	error_reporting(0);		 
-		$a = $_GET['page'];
-
-		$title = preg_replace('~[\\\\/_:*?"<>|]~', ' ', $a);
-		if(isset($_GET["page"]) && $_GET["page"] != "home"){
-                              
-							  if ($a == "") {
-									echo "Oops!";
-                                }else{
-                                   echo "<div class='text-uppercase'><strong>".$title."</strong></div>";
-                                }
-                               }else{
-                          echo "Dashboard";
-                  }				
-		 ?> </h3>
+            
          
 
          
             </div>
             <!-- /.box-header -->
             
-            <div class="box-body">
+            <div class="box-body" style="overflow: scroll;">
   		 
          
          <?php

@@ -43,36 +43,45 @@ while($user_data = mysqli_fetch_array($result))
     <title>Edit User Data</title>
 </head>
 
+<style> 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+</style>
+
 <body>
     <a href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Home</a>
     <br/><br/>
 
     <form name="update_user" method="post" action="edit_ds.php">
 
-            <div class="form-group">
+            
     <label for="exampleFormControlInput1">Nama</label> 
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama siswa" name="nama" value=<?php echo $nama;?>>
-  </div>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama siswa" name="nama" value=<?php echo $nama;?>>
+  
 
-  <div class="form-group">
+  
     <label for="exampleFormControlInput1">No kk</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="No kk" name="nokk" value=<?php echo $nokk;?>>
-  </div>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor KK" name="nokk" value=<?php echo $nokk;?>>
+  
 
-  <div class="form-group">
+  
     <label for="exampleFormControlInput1">Nik</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nik" name="nik" value=<?php echo $nik;?>>
-  </div>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor nik" name="nik" value=<?php echo $nik;?>>
+  
 
-  <div class="form-group">
+  
     <label for="exampleFormControlInput1">Jurusan</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Jurusan" name="jurusan" value=<?php echo $jurusan;?>>
-  </div>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama jurusan" name="jurusan" value=<?php echo $jurusan;?>>
+  
 
-  <div class="form-group">
+  
     <label for="exampleFormControlInput1">Asrama</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Asrama" name="asrama" value=<?php echo $asrama;?>>
-  </div>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama asrama" name="asrama" value=<?php echo $asrama;?>>
+  
 
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>

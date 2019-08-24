@@ -11,6 +11,23 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where con !='2'");
     <title>Add pertanyaan</title>
 </head>
 
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+
 <body>
     <a href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">Go to Home</a>
     <br/><br/>
