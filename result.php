@@ -62,7 +62,7 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
   <input type="hidden" name="MM_insert" value="form1" />
 </form>
 </p> 
-<table width="100%" class="table table-striped table-bordered table-hover">
+<table id="example2" width="100%" class="table table-striped table-bordered table-hover">
 <thead>
   <tr bgcolor="#006633">
     <th width="9%"><span class="style1">RANGKING </span></th>
@@ -70,6 +70,7 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
     <th width="28%"><span class="style1">TOTAL</span></th>
   </tr>
   </thead>
+  <tbody>
   <?php $no = 1; do { ?>
     <tr>
       <td align="center"><?php echo $no++; ?></td>
@@ -77,4 +78,5 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
       <td><?php echo number_format($row_rs_result['total'],3); ?></td>
     </tr>
     <?php } while ($row_rs_result = mysql_fetch_assoc($rs_result)); ?>
+    </tbody>
 </table> 

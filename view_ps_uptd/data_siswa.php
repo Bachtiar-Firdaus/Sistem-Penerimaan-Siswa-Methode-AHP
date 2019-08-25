@@ -23,7 +23,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 
 
-<table border="1">
+<table id="example2" border="1" class="table table-bordered table-hover">
+	<thead>
 	<tr>
 		
 		<th>No</th>
@@ -32,7 +33,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 		<th>Kabupaten</th>
 		<th>Aksi</th>
 	</tr>
-     </tr>
+
+     </thead>
+<tbody>
     <?php  
     $no = "1";
     while($user_data = mysqli_fetch_array($result)) {         
@@ -44,6 +47,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
         echo "<td><a href='/program_april/view_ps_uptd/edit_ds.php?id=$user_data[id]'>Edit</a> | <a href='/program_april/view_ps_uptd/delete_ds.php?id=$user_data[id]'>Delete</a></td></tr>";        
     }
     ?>
+    </tbody>
 </table><br><br>
 
 <a href="view_ps_uptd\cetak_ds.php" class="btn btn-primary">Cetak</a>

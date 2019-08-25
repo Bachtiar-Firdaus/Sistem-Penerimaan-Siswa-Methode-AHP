@@ -5,6 +5,8 @@ $folder = "files/";
 if (!file_exists($folder.$_GET['file'])) {
   echo "<h1>Access forbidden!</h1>
       <p> Anda tidak diperbolehkan mendownload file ini.</p>";
+      echo $folder.$_GET['file'];
+
   exit;
 }
 

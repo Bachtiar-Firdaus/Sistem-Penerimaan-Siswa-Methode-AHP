@@ -43,55 +43,27 @@
 	<tr>
 		
 		<th>No</th>
-		<th>Nama</th>
-		<th>Usia</th>
-		<th>Tanggungan orang tua</th>
-		<th>Pendidikan terakhir</th>
-		<th>Pekerjaan orang tua</th>
-		<th>Penghasilan orang tua</th>
-		<th>Kesehatan</th>
-		<th>Kondisi Rumah</th>
-		<th>Kendaraan</th>
-		<th>Status</th>
+		<th>Nama Peserta</th>
+		<th>Kabupaten</th>
+		<th>Total</th>
 	</tr>
 	<tr>
 		<th>1</th>
 		<td>Ega Liyando</td>
-		<td>0,25</td>
-		<td>0,3</td>
-		<td>0,5</td>
-		<td>2</td>
-		<td>0,25</td>
-		<td>0,5</td>
-		<td>2</td>
-		<td>2</td>
-		<td>2</td>
+		<td>Lampung barat</td>
+		<td>0,768</td>
 	</tr>
 	<tr>
 		<th>2</th>
 		<td>Rahmat Hidayatullah</td>
-		<td>0,25</td>
-		<td>0,3</td>
-		<td>0,5</td>
-		<td>2</td>
-		<td>0,25</td>
-		<td>0,5</td>
-		<td>2</td>
-		<td>2</td>
-		<td>2</td>
+		<td>Lampung timur</td>
+		<td>0,453</td>
 	</tr>
 	<tr>
 		<th>3</th>
 		<td>Bahtiar Firdaus</td>
-		<td>0,25</td>
-		<td>0,3</td>
-		<td>0,5</td>
-		<td>2</td>
-		<td>0,25</td>
-		<td>0,5</td>
-		<td>2</td>
-		<td>2</td>
-		<td>2</td>
+		<td>Lampung tengah</td>
+		<td>0,454</td>
 	</tr>
 </table><br><br>
 

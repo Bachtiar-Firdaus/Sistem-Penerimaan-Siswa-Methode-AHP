@@ -1,4 +1,3 @@
-
 <?php
 // Create database connection using config file
 include_once("\insert\config.php");
@@ -20,22 +19,43 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 <div class="containeredit">
 
-<h1>Data Siswa</h1><br>
+  <select>
+  <option value="volvo">Pilih Jurusan</option>
+  <option value="saab">Menjahit</option>
+  <option value="opel">Elektronik</option>
+  <option value="audi">Motor</option>
+</select>
+
+<input type="date" name="tanggals">
+
+<button>Tambah kegiatan siswa</button>
+
+<h1>Data Siswa</h1> 
 
 
 
-<table border="1">
+<br>
+
+
+
+<table id="example2" border="1" class="table table-bordered table-hover">
+  <thead>
   <tr>
     
-    <th rowspan="2">No</th>
-    <th rowspan="2">Nama</th>
-    <th rowspan="2">Laporan Keterampilan</th>
-    <th rowspan="2">Laporan Mental</th>
-    <th rowspan="2">Laporan Sosial</th>
-    <th rowspan="2">AKSI</th>
+    <th>No</th>
+    <th>Nama</th>
+    <th>Kegiatan Keterampilan</th>
+    <th>Kegiatan Mental</th>
+    <th>Kegiatan Sosial</th>
+    <th>Jurusan</th>
+    <th>Tanggal</th>
+    <th>Aksi</th>
 
   </tr>
-  <tr>
+  </thead>
+
+  <tbody>
+  
     <?php  
     $no = "1";
     while($user_data = mysqli_fetch_array($result)) {         
@@ -45,11 +65,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
         echo "<td>".$user_data['lk']."</td>"; 
         echo "<td>".$user_data['lm']."</td>"; 
         echo "<td>".$user_data['ls']."</td>";  
+        echo "<td>".$user_data['jurusan']."</td>";  
+        echo "<td>".$user_data['tanggal']."</td>";  
         echo "<td><a href='/program_april/view_pendamping/edit_kk.php?id=$user_data[id]'>Edit</a></tr>";        
     }
     ?>
     
-  </tr>
+  
+  </tbody>
 </table><br><br>
 
 <a href="view_pendamping\cetak_kk.php" class="btn btn-primary">Cetak</a>

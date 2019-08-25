@@ -8,7 +8,7 @@
 
       <!-- logo for regular state and mobile devices -->
 
-      <span class="logo-lg"><b>SPK AHP</b></span>
+      <span class="logo-lg" style="font-size: 9px;"><b>Sistem Informasi Kesejahteraan Sosial</b></span>
 
     </a>
 
@@ -38,16 +38,16 @@
 
 	      <!-- Notifications: style can be found in dropdown.less -->
 
-          <li class="dropdown notifications-menu">
+          <!-- <li class="dropdown notifications-menu">
             <a href="?page=insert/kriteria"><i class="fa fa-table"></i>&nbsp; <span class="blink_me">ENTRY KRITERIA </span>  </a>
-          </li>
+          </li> -->
 
           <!-- Messages: style can be found in dropdown.less-->
 
-          <li class="dropdown messages-menu">
+          <!-- <li class="dropdown messages-menu">
            <a href="?page=insert/alternatif"><i class="fa fa-table"></i>&nbsp; <span class="blink_me">ENTRY ALTERNATIF </span>  </a>
           </li>
-
+ -->
          
 
           
@@ -81,9 +81,9 @@
 
           <!-- Control Sidebar Toggle Button -->
 
-          <li>
+          <!-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>  

@@ -54,6 +54,7 @@
 
         <li><a href="?page=view_ps_uptd/perhitungan"><i class="fa fa-table"></i> <span>Perhitungan</span></a> </li>
         <li><a href="?page=view_ps_uptd/data_siswa"><i class="fa fa-table"></i> <span>Data siswa</span></a> </li>
+        
 
         <li class="treeview">
 
@@ -68,12 +69,14 @@
           <ul class="treeview-menu">
 
             <li><a href="?page=result"><i class="fa fa-circle-o"></i>Form Ranking table</a></li>
-            <li><a href="?page=view_ps_uptd/form_ranking_grafik"><i class="fa fa-circle-o"></i> Form ranking grafik</a></li>
+            <!-- <li><a href="?page=view_ps_uptd/form_ranking_grafik"><i class="fa fa-circle-o"></i> Form ranking grafik</a></li> -->
           </ul>
 
         </li>
 
-        <li class="treeview">
+        <li><a href="?page=view_ps_uptd/surat_pemanggilan_datasiswa"><i class="fa fa-table"></i> <span>Upload surat</span></a> </li>
+
+        <!-- <li class="treeview">
 
           <a href="#">
 
@@ -90,7 +93,7 @@
               "><i class="fa fa-circle-o"></i> surat pernyataan</a></li>
           </ul>
 
-        </li>
+        </li> -->
 
         
 

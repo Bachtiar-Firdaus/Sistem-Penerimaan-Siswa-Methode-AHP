@@ -57,7 +57,7 @@ if ($totalRows_rs_kriteria == 0) {
     <tr valign="baseline">
       <td nowrap="nowrap" align="left">&nbsp;</td>
       <td valign="bottom"><input type="submit" value="Edit Kriteria" class="btn btn-success" />
-       <a href="?page=insert/#" class="btn btn-danger">Start Begin</a></td>
+       <!-- <a href="?page=insert/#" class="btn btn-danger">Start Begin</a></td> -->
     </tr>
   </table>
    <input type="hidden" name="MM_update" value="form1" />

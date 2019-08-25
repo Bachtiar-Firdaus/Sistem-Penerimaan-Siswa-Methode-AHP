@@ -23,7 +23,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 
 
-<table border="1">
+<table id="example2" border="1" class="table table-bordered table-hover">
+	<thead>
 	<tr>
 		
 		<th>No</th>
@@ -31,7 +32,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 		<th>Jurusan</th>
 		<th>Kabupaten</th>
 	</tr>
-     </tr>
+     </thead>
+
+     <tbody>
     <?php  
     $no = "1";
     while($user_data = mysqli_fetch_array($result)) {         
@@ -42,6 +45,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
         echo "<td>".$user_data['alko']."</td>";          
     }
     ?>
+    </tbody>
 </table><br><br>
 
 </div>

@@ -17,6 +17,8 @@ if (move_uploaded_file($lokasi_file,"$folder")){
             VALUES('$nama_file', '$_POST[deskripsi]', '$tgl_upload')";
             
   mysqli_query($konek, $query);
+  header("Location: http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/surat_pemanggilan_datasiswa");
+die();
 }
 else{
   echo "File gagal di upload";

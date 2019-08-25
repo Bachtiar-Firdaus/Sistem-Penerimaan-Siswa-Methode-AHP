@@ -38,12 +38,23 @@ while($user_data = mysqli_fetch_array($result))
 
 }
 ?>
-<html>
-<head>  
-    <title>Edit User Data</title>
-</head>
 
-<style> 
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Tambah data KK, NIK, Jurusan, Asrama</title>
+  </head>
+  <style> 
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
@@ -52,9 +63,15 @@ input[type=text] {
 }
 </style>
 
-<body>
-    <a href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Home</a>
-    <br/><br/>
+  <body>
+
+
+
+    <div class="container">
+        <h2>Tambah data KK, NIK, Jurusan, Asrama</h2>
+    <hr>
+    <!-- <a class="btn btn-secondary" href="http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/data_siswa"> << Home</a>
+    <br/><br/> -->
 
     <form name="update_user" method="post" action="edit_ds.php">
 
@@ -64,12 +81,12 @@ input[type=text] {
   
 
   
-    <label for="exampleFormControlInput1">No kk</label>
+    <label for="exampleFormControlInput1">No KK</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor KK" name="nokk" value=<?php echo $nokk;?>>
   
 
   
-    <label for="exampleFormControlInput1">Nik</label>
+    <label for="exampleFormControlInput1">NIK</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor nik" name="nik" value=<?php echo $nik;?>>
   
 
@@ -85,9 +102,10 @@ input[type=text] {
 
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update"></td>
+                <td><input class="btn btn-secondary" type="submit" name="update" value="Update"></td>
             </tr>
   
     </form>
+    </div>
 </body>
 </html>

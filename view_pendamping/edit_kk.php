@@ -10,10 +10,11 @@ if(isset($_POST['update']))
     $lm = $_POST['lm'];
     $lk = $_POST['lk'];
     $ls = $_POST['ls'];
+    $tanggal = $_POST['tanggal'];
 
 
     // update user data
-    $result = mysqli_query($mysqli, "UPDATE tbl_cs SET  lk = '$lk', lm = '$lm', ls = '$ls' WHERE id=$id");
+    $result = mysqli_query($mysqli, "UPDATE tbl_cs SET  lk = '$lk', lm = '$lm', ls = '$ls', tanggal = '$tanggal' WHERE id=$id");
 
     // Redirect to homepage to display updated user in list
     header("Location:http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan");
@@ -32,6 +33,7 @@ while($user_data = mysqli_fetch_array($result))
     $lm = $user_data['lm'];
     $lk = $user_data['lk'];
     $ls = $user_data['ls'];
+    $tanggal = $user_data['tanggal'];
 
 }
 ?>
@@ -58,6 +60,11 @@ while($user_data = mysqli_fetch_array($result))
   <div class="form-group">
     <label for="exampleFormControlInput1">Laporan Keterampilan</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="jenis surat" name="lk" value=<?php echo $lk;?>>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Tanggal</label>
+    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="jenis surat" name="tanggal" value=<?php echo $tanggal;?> >
   </div>
 
             <tr>
