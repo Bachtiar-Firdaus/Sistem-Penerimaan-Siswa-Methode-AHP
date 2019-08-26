@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>Add Calon Siswa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+
 <body>
-    <a href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Go to Home</a>
+    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Go to Home</a>
     <br/><br/>
 <style>
 table, td, th {  
@@ -148,7 +150,7 @@ th, td {
 
             <tr> 
                 <td></td>
-                <td><input type="submit" name="Submit" value="Add"></td>
+                <td><input class="btn btn-primary" type="submit" name="Submit" value="Add"></td>
             </tr>
 
   </table>

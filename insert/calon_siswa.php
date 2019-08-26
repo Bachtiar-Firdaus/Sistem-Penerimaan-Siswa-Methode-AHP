@@ -10,6 +10,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 <head>    
     <title>IDENTIFIKASI CALON SISWA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -29,10 +30,14 @@ th, td {
   padding: 15px;
 }
 </style>
-<a href="insert/add_cs.php">Tambah</a><br/><br/>
+
+<h3>Tambah calon siswa</h3>
+<hr>
+<a class="btn btn-primary" href="insert/add_cs.php">Tambah</a><br/><br/>
 
     <table class="tableee" border=1>
     <tr>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Jenis Kelamin</th>
                 <th>Tempat tanggal lahir</th>
@@ -53,8 +58,10 @@ th, td {
                 <th>Action</th>
      </tr>
     <?php  
+    $no="1";
     while($user_data = mysqli_fetch_array($result)) {         
         echo "<tr>";
+        echo "<td>".$no++."</td>";
         echo "<td>".$user_data['nama']."</td>";
         echo "<td>".$user_data['jk']."</td>";
         echo "<td>".$user_data['ttl']."</td>";   

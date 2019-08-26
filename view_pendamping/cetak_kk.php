@@ -7,11 +7,17 @@ include_once("config.php");
 $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 ?>
 <style type="text/css">
-  tr, td,th{
+
+  table, tr,td,th{
+    border :1px solid black;
     padding: 10px;
+    border-collapse: collapse;
+
   }
+  
   .containeredit{
-    padding: 20px;
+    padding: 10px;
+    text-align: -webkit-center;
   }
   .modal-dialog{
     width:90%;
@@ -20,20 +26,33 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 <div class="containeredit">
 
-<h1>Data Siswa</h1><br>
+
+       
+
+<p align="center">LAPORAN PETUGAS PENDAMPING JURUSAN</p>
+<p align="center">BIMBINGAN KETERAMPILAN </p>
+<p align="center">UPTD PSBR RADIN INTAN LAMPUNG TAHUN 2018</p>
 
 
 
-<table border="1">
+
+
+
+<table>
+  <thead>
   <tr>
     
     <th rowspan="2">No</th>
     <th rowspan="2">Nama</th>
+    <th rowspan="2">Bulan</th>
     <th rowspan="2">Laporan Keterampilan</th>
     <th rowspan="2">Laporan Mental</th>
     <th rowspan="2">Laporan Sosial</th>
+    <th rowspan="2">Jurusan</th>
 
   </tr>
+  </thead>
+  <tbody>
   <tr>
     <?php  
     $no = "1";
@@ -41,14 +60,19 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
         echo "<tr>";     
         echo "<td>".$no++."</td>";
         echo "<td>".$user_data['nama']."</td>"; 
+        echo "<td>".$user_data['tanggal']."</td>"; 
         echo "<td>".$user_data['lk']."</td>"; 
         echo "<td>".$user_data['lm']."</td>"; 
-        echo "<td>".$user_data['ls']."</td></tr>";        
+        echo "<td>".$user_data['ls']."</td>";        
+        echo "<td>".$user_data['jurusan']."</td></tr>";        
     }
     ?>
     
   </tr>
-</table><br><br>
+  </tbody>
+</table>
+
+<br><br>
 
 
 </div>

@@ -54,6 +54,7 @@ while($user_data = mysqli_fetch_array($result))
 <html>
 <head>  
     <title>Cetak Pertanyaan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <style>
@@ -74,7 +75,7 @@ th, td {
 </style>
 
 <body>
-    <a href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">back</a>
+    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">back</a>
     <br/><br/>
         <table border="0">
 

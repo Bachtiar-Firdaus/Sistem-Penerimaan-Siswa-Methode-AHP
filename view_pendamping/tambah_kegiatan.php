@@ -1,105 +1,99 @@
 <?php
-// Create database connection using config file
-include_once("\insert\config.php");
+// include database connection file
+// include_once("config.php");
 
-// Fetch all tbl_cs data from database
+$databaseHost = 'localhost';
+$databaseName = 'codegoo_ahp';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+
+
+
 $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 ?>
-<style type="text/css">
-	tr, td,th{
-		padding: 10px;
-	}
-	.containeredit{
-		padding: 20px;
-	}
-	.modal-dialog{
-		width:90%;
-	}
-</style>
 
-<div class="containeredit">
 
-<h1>Input kegiatan siswa</h1><br>
 
-<select name = "nama_cs" >
-<option >pilih siswa</option>
-<?php while($user_data = mysqli_fetch_array($result)) {  ?>
-<option><?php  echo "<td>".$user_data['nama'];?></option>
-<?php     }
-  ?>
-</select>
+
 
 <html>
 <head>  
-    <title>Tambah kegiatan</title>
+    <title>Edit User Data</title>
+
 </head>
 
 <body>
-    <!-- <a href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Home</a> -->
+    <a href="http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan"> << Home</a>
     <br/><br/>
 
-    <form name="update_user" method="post" action="edit_kk.php">
+    <form name="form1" method="post" action="view_pendamping/tambah_kegiatan.php">
+
+<select name = "nama_siswa" >
+    <option >pilih siswa</option>
+    <?php while($user_data = mysqli_fetch_array($result)) {  ?>
+    <option value="<?php  echo $user_data['nama'];?>"><?php  echo "<td>".$user_data['nama'];?></option>
+    <?php     }
+      ?>
+</select><br><br>
+
+
             <div class="form-group">
     <label for="exampleFormControlInput1">Laporan Mental</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="jenis surat" name="lm" value="">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukan nama siswa" name="k_mental" value=""
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput1">Laporan Sosial</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="jenis surat" name="ls" value="">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukan kegiatan mental" name="k_sosial" value=""
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput1">Laporan Keterampilan</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="jenis surat" name="lk" value="">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukan kegiatan sosial" name="k_keterampilan" value="">
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlInput1">Tanggal</label>
-    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="jenis surat" name="tanggal" value="">
-  </div>
+    <label for="exampleFormControlInput1">Jurusan</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukan kegiatan keterampilan" name="jurusan" value="">
 
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Tanggal</label>
+    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="masukan jurusan" name="date" value="">
+<br>
             <tr>
-                <!-- <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td> -->
-                <td><input type="submit" name="tambah" value="tambah"></td>
+                <td><input type="hidden" name="id" value=""> </td>
+                <td><input type="submit" name="submit" value="add"></td>
             </tr>
   
     </form>
+<?php 
+
+if(isset($_POST['submit'])) {
+        $nama_siswa = $_POST['nama_siswa'];
+        $k_mental = $_POST['k_mental'];
+        $k_sosial = $_POST['k_sosial'];
+        $k_keterampilan = $_POST['k_keterampilan'];
+        $jurusan = $_POST['jurusan'];
+        $tanggal = $_POST['date'];
+        // include database connection file
+        
+        include_once("config.php");
+
+        // Insert user data into table
+        $result = mysqli_query($mysqli, "INSERT INTO tbl_kegiatan(nama_siswa,k_mental,k_sosial,k_keterampilan,jurusan,tanggal) VALUES('$nama_siswa','$k_mental','$k_sosial','$k_keterampilan','$jurusan','$tanggal')");
+
+        // Show message when user added
+        echo "User added successfully. <a href='http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan'>View tbl_cs</a>";
+    }
+    else{
+      echo "";
+    }
+
+
+?>
+
+
 </body>
 </html>
-
-<!-- 
-
-<table id="example2" border="1" class="table table-bordered table-hover">
-	<thead>
-	<tr>
-		
-		<th>No</th>
-		<th>Nama</th>
-		<th>Jurusan</th>
-		<th>Kabupaten</th>
-		<th>Aksi</th>
-	</tr>
-
-     </thead>
-<tbody>
-    <?php  
-    $no = "1";
-    while($user_data = mysqli_fetch_array($result)) {         
-        echo "<tr>";     
-        echo "<td>".$no++."</td>";
-        echo "<td>".$user_data['nama']."</td>"; 
-        echo "<td>".$user_data['jurusan']."</td>"; 
-        echo "<td>".$user_data['alko']."</td>";  
-        echo "<td><a href='/program_april/view_ps_uptd/edit_ds.php?id=$user_data[id]'>Edit</a> | <a href='/program_april/view_ps_uptd/delete_ds.php?id=$user_data[id]'>Delete</a></td></tr>";        
-    }
-    ?>
-    </tbody>
-</table><br><br>
-
-<a href="view_ps_uptd\cetak_ds.php" class="btn btn-primary">Cetak</a>
-
-</div>
-
-
- -->

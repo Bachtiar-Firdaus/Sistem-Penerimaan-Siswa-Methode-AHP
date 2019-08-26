@@ -14,7 +14,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_pertanyaan ORDER BY id DESC")
     <div class="col-xs-12">
       <div class="box" style="overflow: scroll;">
         <div class="box-header">
-          <h class="box-title">IDENTIFIKASI CALON SISWA</h>
+          <h class="box-title">Indentifikasi Calon Siswa</h>
 
         </div>
         <div class="box-header">
@@ -29,7 +29,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_pertanyaan ORDER BY id DESC")
           .modal-dialog{
             width: 97%;
         </style>
-        <a href="insert\add_ip.php"><button>INPUT PERTANYAAN</button></a> 
+        <a class="btn btn-primary" href="insert\add_ip.php">Input Pertanyaan</a> 
         <br><br>
 
         <table border="1">

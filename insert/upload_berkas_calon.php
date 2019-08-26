@@ -1,100 +1,83 @@
 
-	<div class="row">
-		<div class="col-xs-12">
-            <div class="box">
-				<div class="box-header">
-					<h3 class="box-title">Berkas Calon Siswa</h3>
-				</div>
-				<div class="box-header">
-					<div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                          Pilih nama data calon siswa<span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Daus</a></li>
-                          <li><a href="#">Dayat</a></li>
-                          <li><a href="#">Ega</a></li>
-                        </ul>
-                      </div>
-                      
-					<input type="button" class="btn btn-primary" value="Tambah" data-toggle="modal" data-target="#modal-default"
-						name="" id="">
-				</div>
-				<!-- /.box-header -->
-				<div class="box-body">
-					<table id="example2" class="table table-bordered table-hover">
-						<thead>
-							<tr>
-                                <th>No</th>
-                                <th>Nama Siswa</th>
-								<th>File Berkas Ijazah</th>
-								<th>File Berkas KTP</th>
-								<th>Aksi</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-                                <td>Ega Liyando</td>
-                                <td>........../...........</td>
-                                <td>........../...........</td>
-                                <td><input type="button" class="btn btn-success"
-										value="Edit" name="" id=""></td>
-								
-							</tr>
-							<tr>
-								<td>2</td>
-                                <td>Daus </td>
-                                <td>........../...........</td>
-                                <td>........../...........</td>
-                                <td><input type="button" class="btn btn-success"
-										value="Edit" name="" id=""></td>
-								
-							</tr>
-							<tr>
-								<td>3</td>
-                                <td>Rhmat Hidayatullah</td>
-                                <td>........../...........</td>
-                                <td>........../...........</td>
-								<td><input type="button" class="btn btn-success"
-										value="Edit" name="" id=""></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-		</div>
-	</div>
-</div>
-</div>
+<link href="assetss/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assetss/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="assetss/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<?php
+// Create database connection using config file
+include_once("\insert\config.php");
 
-<div class="modal fade" id="modal-default">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Tambah Data Calon Siswa</h4>
-			</div>
-			<div class="modal-body">
-            <div class="form-group">
-					<label for="exampleInputFile">Upload Berkas Ijazah</label>
-					<input type="file" id="exampleInputFile">
-					<p class="help-block">Pilih Berkas</p>
-				</div>
+// Fetch all tbl_cs data from database
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_pertanyaan ORDER BY id DESC");
+?>
 
-				<div class="form-group">
-					<label for="exampleInputFile">Upload Berkas Ktp</label>
-					<input type="file" id="exampleInputFile">
-					<p class="help-block">Pilih Berkas</p>
-				</div>
-				
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Batal</button>
-				<button type="button" class="btn btn-primary">Simpan</button>
-			</div>
-		</div>
-		<!-- /.modal-content -->
-	</div>
-	<!-- /.modal-dialog -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box" style="overflow: scroll;">
+        <div class="box-header">
+          <h class="box-title">Form berkas KTP & Ijazah</h>
+
+        </div>
+        <div class="box-header">
+
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <style type="text/css">
+          tr,td{
+            padding: 10px;
+          }
+          .modal-dialog{
+            width: 97%;
+        </style>
+        <a class="btn btn-primary" href="insert\add_berkas.php">Upload Berkas Ijazah & KTP</a> 
+        <br><br>
+
+        <table border="1">
+
+          <style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Berkas Ijazah</th>
+            <th>Berkas KTP</th>
+            <!-- <th>Aksi</th> -->
+          </tr>
+
+    <?php  
+    $no = "1";
+    while($user_data = mysqli_fetch_array($result)) {         
+        echo "<tr>";      
+        echo "<td>".$no++."</td>";
+        echo "<td>".$user_data['nama_cs']."</td>";
+        echo "<td></td>";
+        echo "<td></td>";
+        // echo "<td><a href='/program_april/insert/edit_ip.php?id=$user_data[id]'>Cetak</a>";        
+    }
+    ?>
+        </table>
+          </div> <br />
+          
+        </div>
+        <!-- /.box-body -->
+      </div>
+
+    </div>
+    <!-- /.col -->
+  </div>
 

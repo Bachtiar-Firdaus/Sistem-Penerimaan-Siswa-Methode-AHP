@@ -18,12 +18,12 @@ if (isset($_POST['username'])) {
   $loginUsername=$_POST['username'];
   $password=$_POST['password'];
   $MM_fldUserAuthorization = "";
-  $MM_redirectLoginSuccess = "dashboard.php";
-  $MM_redirectLoginFailed = "login.php";
+  $MM_redirectLoginSuccess = "dashboard_ps_uptd.php";
+  $MM_redirectLoginFailed = "login1.php";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_koneksi, $koneksi);
   
-  $LoginRS__query=sprintf("SELECT username, password FROM tb_users WHERE username=%s AND password=%s AND fullname='psmkab'",
+  $LoginRS__query=sprintf("SELECT username, password FROM tb_users WHERE username=%s AND password=%s AND fullname='psuptd'",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
   $LoginRS = mysql_query($LoginRS__query, $koneksi) or die(mysql_error());
@@ -53,7 +53,7 @@ if (isset($_POST['username'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PSM KAB</title>
+  <title>PS UPTD</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -87,7 +87,7 @@ if (isset($_POST['username'])) {
   </style>
 </head>
 
-<h1>Program SPK-PSM KAB</h1>
+<h1>Program SPK-PS UPTD</h1>
 
   <div class="kotak_login" style="background-color: red;">
 

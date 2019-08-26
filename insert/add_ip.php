@@ -11,6 +11,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where con !='2'");
     <title>Add pertanyaan</title>
 </head>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <style>
 table, td, th {  
   border: 1px solid #ddd;
@@ -29,7 +31,7 @@ th, td {
 </style>
 
 <body>
-    <a href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">Go to Home</a>
+    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">Go to Home</a>
     <br/><br/>
 
     <form action="add_ip.php" method="post" name="form1">
@@ -649,7 +651,7 @@ th, td {
 
             <tr> 
                 <td></td>
-                <td><input type="submit" name="Submit" value="Add"></td>
+                <td><input class="btn btn-primary" type="submit" name="Submit" value="Add"></td>
             </tr>
 
   </table>

@@ -82,14 +82,14 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
   <tr align="center" bgcolor="#003366">
     <th width="5%"><span class="style1">NO.</span></th>
     <th width="76%"><span class="style1">NAMA</span></th>
-    <th width="19%"><span class="style1"> </span></th>
+    <!-- <th width="19%"><span class="style1"> </span></th> -->
   </tr>
   </thead>
   <?php $no = 1; do { ?>
     <tr>
       <td align="center"><?php echo $no++; ?></td>
       <td><?php echo $row_rs_peserta['nama_peserta']; ?></td>
-      <td><a href="?page=update/peserta&id_peserta=<?php echo $row_rs_peserta['id_peserta']; ?>">Edit Peserta</a></td>
+      <!-- <td><a href="?page=update/peserta&id_peserta=<?php echo $row_rs_peserta['id_peserta']; ?>">Edit Peserta</a></td> -->
     </tr>
     <?php } while ($row_rs_peserta = mysql_fetch_assoc($rs_peserta)); ?>
 </table> 

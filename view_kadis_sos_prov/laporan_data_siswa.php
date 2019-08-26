@@ -4,7 +4,7 @@
 include_once("\insert\config.php");
 
 // Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan DESC");
 ?>
 <style type="text/css">
   tr, td,th{
@@ -20,37 +20,47 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 <div class="containeredit">
 
-<h1>Data Siswa</h1><br>
+<h3>Laporan Kegiatan Data Siswa</h3><hr><br>
 
 
 
-<table border="1">
+<table id="example2" border="1" class="table table-bordered table-hover">
+  <thead>
   <tr>
     
-    <th rowspan="2">No</th>
-    <th rowspan="2">Nama</th>
-    <th rowspan="2">Laporan Keterampilan</th>
-    <th rowspan="2">Laporan Mental</th>
-    <th rowspan="2">Laporan Sosial</th>
+    <th>No</th>
+    <th>Nama</th>
+    <th>Kegiatan Keterampilan</th>
+    <th>Kegiatan Mental</th>
+    <th>Kegiatan Sosial</th>
+    <th>Jurusan</th>
+    <th>Tanggal</th>
 
   </tr>
-  <tr>
+  </thead>
+  <tbody>
+  
     <?php  
     $no = "1";
     while($user_data = mysqli_fetch_array($result)) {         
         echo "<tr>";     
         echo "<td>".$no++."</td>";
-        echo "<td>".$user_data['nama']."</td>"; 
-        echo "<td>".$user_data['lk']."</td>"; 
-        echo "<td>".$user_data['lm']."</td>"; 
-        echo "<td>".$user_data['ls']."</td></tr>";        
+        // echo "<td>".$user_data['id_kegiatan']."</td>"; 
+        echo "<td>".$user_data['nama_siswa']."</td>"; 
+        echo "<td>".$user_data['k_mental']."</td>"; 
+        echo "<td>".$user_data['k_sosial']."</td>";  
+        echo "<td>".$user_data['k_keterampilan']."</td>";  
+        echo "<td>".$user_data['jurusan']."</td>";  
+        echo "<td>".$user_data['tanggal']."</td>";  
+        // echo "<td><a href='/program_april/view_pendamping/delete_kegiatan.php?id_kegiatan=$user_data[id_kegiatan]'>Delete</a></td></tr>";      
     }
     ?>
     
-  </tr>
+  
+  </tbody>
 </table><br><br>
 
-<a href="view_pendamping\cetak_kk.php" class="btn btn-primary">Cetak</a>
+<!-- <a href="view_pendamping\cetak_kk.php" class="btn btn-primary">Cetak</a> -->
 
 </div>
 

@@ -1,10 +1,9 @@
 <?php
-// Create database connection using config file
 include_once("\insert\config.php");
-
-// Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan DESC");
 ?>
+
+
 <style type="text/css">
   tr, td,th{
     padding: 10px;
@@ -19,16 +18,24 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 <div class="containeredit">
 
-  <select>
-  <option value="volvo">Pilih Jurusan</option>
-  <option value="saab">Menjahit</option>
-  <option value="opel">Elektronik</option>
-  <option value="audi">Motor</option>
+  <form method="post" action="view_pendamping/data_sortir.php">
+
+  <select name="jurusan">
+  <option value="">Pilih Jurusan</option>
+  <option value="menjahit">Menjahit</option>
+  <option value="elektronik">Elektronik</option>
+  <option value="motor">Motor</option>
 </select>
 
-<input type="date" name="tanggals">
+<input type="date" name="tanggal">
 
-<button>Tambah kegiatan siswa</button>
+<tr>
+                <td><input type="submit" name="search" value="search"></td>
+            </tr>
+
+</form><br>
+
+<a class="btn btn-primary" href="http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/tambah_kegiatan">Tambah Kegiatan</a>
 
 <h1>Data Siswa</h1> 
 
@@ -61,13 +68,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
     while($user_data = mysqli_fetch_array($result)) {         
         echo "<tr>";     
         echo "<td>".$no++."</td>";
-        echo "<td>".$user_data['nama']."</td>"; 
-        echo "<td>".$user_data['lk']."</td>"; 
-        echo "<td>".$user_data['lm']."</td>"; 
-        echo "<td>".$user_data['ls']."</td>";  
+        // echo "<td>".$user_data['id_kegiatan']."</td>"; 
+        echo "<td>".$user_data['nama_siswa']."</td>"; 
+        echo "<td>".$user_data['k_mental']."</td>"; 
+        echo "<td>".$user_data['k_sosial']."</td>";  
+        echo "<td>".$user_data['k_keterampilan']."</td>";  
         echo "<td>".$user_data['jurusan']."</td>";  
         echo "<td>".$user_data['tanggal']."</td>";  
-        echo "<td><a href='/program_april/view_pendamping/edit_kk.php?id=$user_data[id]'>Edit</a></tr>";        
+        echo "<td><a href='/program_april/view_pendamping/delete_kegiatan.php?id_kegiatan=$user_data[id_kegiatan]'>Delete</a></td></tr>";      
     }
     ?>
     

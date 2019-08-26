@@ -108,7 +108,7 @@
                                 <th>No</th>
                                 <th>Nama File</th>
 								<th>Nama Surat</th>
-								<th>Aksi</th>
+								<!-- <th>Aksi</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -139,8 +139,8 @@
   	echo "<td>$no</td>";
   	echo "<td>$r[nama_file]</b></td>";
   	echo "<td>$r[deskripsi]</td>";
-  	echo "<td><a href=\"view_ps_uptd\simpan.php?file=$r[nama_file]\">Downl
-    oad File</a></td>";
+  	// echo "<td><a href=\"view_ps_uptd\simpan.php?file=$r[nama_file]\">Downl
+   //  oad File</a></td>";
 
     echo "</tr>"
 

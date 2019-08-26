@@ -48,7 +48,7 @@
 
             <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>Calon Siswa</a></li>
             <li><a href="?page=insert/input_pertanyaan"><i class="fa fa-circle-o"></i>Input Pertanyaan</a></li>
-            <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>Upload Berkas</a></li>
+            <!-- <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>Upload Berkas</a></li> -->
           </ul>
 
         </li>
@@ -65,7 +65,7 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="?page=insert/intensitas"><i class="fa fa-circle-o"></i> Tabel Intensitas</a></li>
+            <!-- <li><a href="?page=insert/intensitas"><i class="fa fa-circle-o"></i> Tabel Intensitas</a></li> -->
             <!-- <li><a href="?page=insert/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li> -->
             <li><a href="?page=insert/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
           </ul>

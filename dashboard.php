@@ -230,15 +230,15 @@ $totalRows_rs_users = mysql_num_rows($rs_users);
 <!-- aside here -->
 
   <!-- content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background-image: url('gambar.jpg'); background-size: cover;">
     <!-- Content Header (Page header) -->
  
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" >
       <div class="row">
         <div class="col-md-12">
-          <div class="box">
+          <div class="box" style="opacity: 0.95;">
             <div class="box-header">
             
          

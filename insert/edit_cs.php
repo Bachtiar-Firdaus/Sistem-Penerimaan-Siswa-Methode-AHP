@@ -65,10 +65,28 @@ while($user_data = mysqli_fetch_array($result))
 <html>
 <head>  
     <title>Edit User Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+
 <body>
-    <a href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Home</a>
+    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Home</a>
     <br/><br/>
 
     <form name="update_user" method="post" action="edit_cs.php">
@@ -197,7 +215,7 @@ while($user_data = mysqli_fetch_array($result))
 
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update"></td>
+                <td><input class="btn btn-primary" type="submit" name="update" value="Update"></td>
             </tr>
   
         </table>
