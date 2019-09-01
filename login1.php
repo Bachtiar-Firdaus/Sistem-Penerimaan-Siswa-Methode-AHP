@@ -16,12 +16,12 @@ if (isset($_POST['username'])) {
   $loginUsername=$_POST['username'];
   $password=$_POST['password'];
   $MM_fldUserAuthorization = "";
-  $MM_redirectLoginSuccess = "dashboard.php";
-  $MM_redirectLoginFailed = "login.php";
+  $MM_redirectLoginSuccess = "dashboard_ps_uptd.php";
+  $MM_redirectLoginFailed = "login1.php";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_koneksi, $koneksi);
   
-  $LoginRS__query=sprintf("SELECT username, password FROM tb_users WHERE username=%s AND password=%s AND fullname='psmkab'",
+  $LoginRS__query=sprintf("SELECT username, password FROM tb_users WHERE username=%s AND password=%s AND fullname='psuptd'",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
   $LoginRS = mysql_query($LoginRS__query, $koneksi) or die(mysql_error());
@@ -77,7 +77,7 @@ if (isset($_POST['username'])) {
 <body style="background-image: linear-gradient(#bbdefb, #e3f2fd)">
   <div class="kotak_login border" style="background-color: #006db3;">
     <b>
-      <p class="tulisan_login" style="color: white">Silahkan login - PSM KAB</p>
+      <p class="tulisan_login" style="color: white">Silahkan login - PS UPTD</p>
     </b>
     <div style="margin-bottom: 20px;" class="dropdown">
       <button class="btn btn-info btn-block btn-flat dropdown-toggle" type="button" id="dropdownMenuButton"
