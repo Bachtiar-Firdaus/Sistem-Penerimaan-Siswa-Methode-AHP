@@ -86,14 +86,14 @@ input[type=text] {
   
 
   
-    <label for="exampleFormControlInput1">NIK</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor nik" name="nik" value=<?php echo $nik;?>>
+    <!-- <label for="exampleFormControlInput1">NIK</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor nik" name="nik" value=<?php echo $nik;?>> -->
   
 
   
     <div class="form-group">
   <label for="sel1">Pilih jurusan :</label>
-  <select class="form-control" id="sel1" name="keterangan">
+  <select class="form-control" id="sel1" name="jurusan">
     <option value="menjahit">Menjahit</option>
     <option value="eletronik">Eletronik</option>
     <option value="motor">Motor</option>

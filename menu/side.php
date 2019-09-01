@@ -57,7 +57,7 @@
 
           <ul class="treeview-menu">
 
-            <!-- <li><a href="?page=insert/intensitas"><i class="fa fa-circle-o"></i> Tabel Intensitas</a></li> -->
+            <li><a href="?page=insert/intensitas"><i class="fa fa-circle-o"></i> Tabel Intensitas</a></li>
             <!-- <li><a href="?page=insert/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li> -->
             <li><a href="?page=insert/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
           </ul>

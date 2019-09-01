@@ -272,11 +272,38 @@ th, td {
     </tr>
     <tr>
       <td colspan="2" style="text-align: end;">Kab/kota</td>
-      <td colspan="3">:  <select name="alko">
+      <td colspan="3">:  
+
+
+
+        <!-- <select name="alko">
       <option value="menjahit">Menjahit</option>
       <option value="motor">Motor</option>
       <option value="elektronik">Elektronik</option>
-    </select></td>
+    </select> -->
+
+    <select name = "alko" >
+<!-- <option >Hasil Perhitungan Kabupaten</option> -->
+    <option value="lampung barat">Lampung Barat<option>
+    <option value="lampung selatan">Lampung Selatan<option>
+    <option value="lampung tengah">Lampung Tengah<option>
+    <option value="lampung timur">Lampung Timur<option>
+    <option value="lampung utara">Lampung Utara<option>
+    <option value="mesuji">Mesuji<option>
+    <option value="pesisir barat">Pesisir Barat<option>
+    <option value="pringsewu">Pringsewu<option>
+    <option value="tanggamus">Tanggamus<option>
+    <option value="tulang bawang">Tulang Bawang<option>
+    <option value="tulang bawang barat">Tulang Bawang barat<option>
+    <option value="way kanan">Way Kanan<option>
+    <option value="bandar lampung">Bandar Lampung<option>
+    <option value="metro">Metro<option>
+    <option value="pesawaran">Pesawaran<option>
+
+</select>
+
+
+  </td>
     </tr>
 
     

@@ -28,7 +28,7 @@ $totalRows_rs_intensitas = mysql_num_rows($rs_intensitas);
 
 <body>
 <div class="col-md-6">
-<form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+<!-- <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table width="100%" height="118">
     <tr valign="baseline">
       <td width="14%" align="left" valign="top" nowrap="nowrap">Nomor</td>
@@ -44,7 +44,7 @@ $totalRows_rs_intensitas = mysql_num_rows($rs_intensitas);
     </tr>
   </table>
   <input type="hidden" name="MM_insert" value="form1" />
-</form>
+</form> -->
 </div>
 
 <div class="col-md-6">

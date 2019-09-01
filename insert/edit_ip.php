@@ -83,7 +83,7 @@ th, td {
 <h3>Data Siswa Instrumen: <?php echo $nama_cs;?></h3>
 
 
-      <table border="1">
+     <!--  <table border="1">
     <tr>
       <td rowspan="12">2</td>
       <td colspan="9">II. LATAR BELAKANG KELUARGA DAN SOSIAL EKONOMI.</td>
@@ -188,7 +188,7 @@ th, td {
       <td><?php echo $jumlah_s;?></td>
       <td>orang</td>
     </tr>
-  </table>
+  </table> -->
 <!-- akhr no 2 -->
 
 <!-- no 3 -->
