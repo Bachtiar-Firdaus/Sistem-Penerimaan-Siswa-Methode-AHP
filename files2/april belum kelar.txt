@@ -1,0 +1,4 @@
+1. psm kab = 1. upload berkas calon siswa
+             2. download pengumuman
+2. ps uptd = 1. hasil perhiatungan berdasarkan kabupaten ///
+	     2. upload surat data siswa dan pernyataan

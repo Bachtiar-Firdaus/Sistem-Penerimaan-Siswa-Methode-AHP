@@ -8,12 +8,12 @@ if (!$mysqli) {
 }
 
 if (isset($_POST['search'])) {
-  $jurusan = $_POST['jurusan'];
+  // $jurusan = $_POST['jurusan'];
   $tanggal = $_POST['tanggal'];
 
   // $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
 
-  $query = mysqli_query($mysqli, " SELECT * FROM tbl_kegiatan WHERE tanggal = '$tanggal' AND jurusan = '$jurusan' ");
+  $query = mysqli_query($mysqli, " SELECT * FROM tbl_cs WHERE tanggal = '$tanggal' AND keterangan = 'diterima' ");
 
   // $query = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 20");
 
@@ -52,7 +52,7 @@ if (isset($_POST['search'])) {
 
 <div class="containeredit">
 
-<p align="center">INFORMASI SISWA PERJURUSAN DAN TANGGAL</p>
+<p align="center">INFORMASI SISWA</p>
 <!-- <p align="center">BIMBINGAN KETERAMPILAN </p> -->
 <p align="center">UPTD PSBR RADIN INTAN LAMPUNG</p>
 
@@ -68,10 +68,9 @@ if (isset($_POST['search'])) {
     
     <th>No</th>
     <th>Nama</th>
-    <th>Kegiatan mental</th>
-    <th>Kegiatan sosial</th>
-    <th>Kegiatan keterampilan</th>
     <th>Jurusan</th>
+    <th>Kabupaten</th>
+    <th>Keterangan</th>
     <th>Tanggal</th>
 
   </tr>
@@ -85,11 +84,10 @@ if (isset($_POST['search'])) {
         echo "<tr>";     
         echo "<td>".$no++."</td>";
         // echo "<td>".$user_data['id_kegiatan']."</td>"; 
-        echo "<td>".$row['nama_siswa']."</td>"; 
-        echo "<td>".$row['k_mental']."</td>"; 
-        echo "<td>".$row['k_sosial']."</td>"; 
-        echo "<td>".$row['k_keterampilan']."</td>"; 
+        echo "<td>".$row['nama']."</td>"; 
         echo "<td>".$row['jurusan']."</td>"; 
+        echo "<td>".$row['alko']."</td>"; 
+        echo "<td>".$row['keterangan']."</td>"; 
         echo "<td>".$row['tanggal']."</td></tr>";  
         // echo "<td><a href='/program_april/view_pendamping/edit_kk.php?id=$user_data[id]'>Edit</a></tr>";        
     }

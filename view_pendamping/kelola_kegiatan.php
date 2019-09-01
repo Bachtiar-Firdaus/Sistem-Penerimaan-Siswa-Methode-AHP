@@ -18,6 +18,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan
 
 <div class="containeredit">
 
+  <h2>Data Kegiatan Siswa</h2> <hr>
+
   <form method="post" action="view_pendamping/data_sortir.php">
 
   <select name="jurusan">
@@ -30,14 +32,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan
 <input type="date" name="tanggal">
 
 <tr>
-                <td><input type="submit" name="search" value="search"></td>
+                <td><input class="btn btn-primary" type="submit" name="search" value="Sortir data"></td>
             </tr>
 
 </form><br>
 
-<a class="btn btn-primary" href="http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/tambah_kegiatan">Tambah Kegiatan</a>
+<a class="btn btn-primary" href="http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/tambah_kegiatan">Tambah Kegiatan</a><br>
 
-<h1>Data Siswa</h1> 
+
 
 
 
@@ -75,7 +77,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan
         echo "<td>".$user_data['k_keterampilan']."</td>";  
         echo "<td>".$user_data['jurusan']."</td>";  
         echo "<td>".$user_data['tanggal']."</td>";  
-        echo "<td><a href='/program_april/view_pendamping/delete_kegiatan.php?id_kegiatan=$user_data[id_kegiatan]'>Delete</a></td></tr>";      
+        echo "<td><a href='/program_april/view_pendamping/delete_kegiatan.php?id_kegiatan=$user_data[id_kegiatan]'>Delete</a> || <a href='/program_april/view_pendamping/edit_kk.php?id_kegiatan=$user_data[id_kegiatan]'>Edit</a></td></tr>";      
     }
     ?>
     

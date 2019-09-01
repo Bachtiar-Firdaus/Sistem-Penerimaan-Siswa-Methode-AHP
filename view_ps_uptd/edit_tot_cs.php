@@ -9,10 +9,11 @@ if(isset($_POST['update']))
     $id = $_POST['id'];
 
     $nama = $_POST['nama'];
+    $keterangan = $_POST['keterangan'];
     $tot = $_POST['tot'];
 
     // update user data
-    $result = mysqli_query($mysqli, "UPDATE tbl_cs SET  tot = '$tot' , nama = '$nama' WHERE id=$id");
+    $result = mysqli_query($mysqli, "UPDATE tbl_cs SET  tot = '$tot' , keterangan = '$keterangan' , nama = '$nama' WHERE id=$id");
 
     // Redirect to homepage to display updated user in list
     header("Location: http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/perhitungan#");
@@ -29,6 +30,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs WHERE id=$id");
 while($user_data = mysqli_fetch_array($result))
 {
     $nama = $user_data['nama'];
+    $keterangan = $user_data['keterangan'];
     $tot = $user_data['tot'];
 
 }
@@ -57,22 +59,30 @@ input[type=text] {
 </style>
 
 <body>
-    <div class="container">
-        <h2>Edit Nama Siswa dan Nilai Total</h2>
+    <div class="container" style="margin-top: 30px;">
+        <h2>Edit Keterangan Siswa dan Nilai Total Siswa</h2>
     <hr>
 
 
     <form name="update_user" method="post" action="edit_tot_cs.php">
 
       <label for="exampleFormControlInput1">Nama</label> 
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama siswa" name="nama" value=<?php echo $nama;?>>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama siswa" name="nama" readonly value=<?php echo $nama;?>>
+
+    <div class="form-group">
+  <label for="sel1">Pilih keterangan :</label>
+  <select class="form-control" id="sel1" name="keterangan">
+    <option value="Belum diterima">Belum diterima</option>
+    <option value="Diterima">Diterima</option>
+  </select>
+</div>
 
     <label for="exampleFormControlInput1">Total nilai</label> 
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nilai total" name="tot" value=<?php echo $tot;?>>
 
       <!-- <td><input type="text" name="tot" value=<?php echo $tot;?>></td> -->
 
-      <input type="submit" name="update" value="Update">
+      <input class="btn btn-primary" type="submit" name="update" value="Update">
       <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
             
         

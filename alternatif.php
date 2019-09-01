@@ -6,6 +6,8 @@
 <div class="col-md-12">
 <?php require_once('Connections/koneksi.php');
 // ---- menampilkan kriteria berdasrakan kode ------
+
+/*as,das,d ( K1 )*/
 $colname_rs_kriteria = "-1";
 if (isset($_GET['kode'])) {
   $colname_rs_kriteria = $_GET['kode'];
@@ -17,6 +19,9 @@ $row_rs_kriteria = mysql_fetch_assoc($rs_kriteria);
 $totalRows_rs_kriteria = mysql_num_rows($rs_kriteria);
 
 //------ untuk menyimpan nilai ke table RESULT
+
+
+
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
@@ -29,16 +34,16 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
 		  if ($cek > 0) {
 			//----- untuk menampilkan jumlah banyaknya peserta untuk dilakukan looping
 			  mysql_select_db($database_koneksi, $koneksi);
-			  $query_rs_peserta = "SELECT * FROM tb_peserta";
+			  $query_rs_peserta = "SELECT * FROM tbl_cs";
 			  $rs_peserta = mysql_query($query_rs_peserta, $koneksi) or die(mysql_error());
 			  $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
 				
 			  for($jmlh = 1; $jmlh <= $totalRows_rs_peserta; $jmlh++) {
 			  
-			  $insertSQL = sprintf("UPDATE tb_result SET nilai=%s WHERE kode_kriteria=%s AND id_peserta=%s",
+			  $insertSQL = sprintf("UPDATE tb_result SET nilai=%s WHERE kode_kriteria=%s AND id=%s",
 								   GetSQLValueString($_POST['nilai'.$jmlh], "double"),
 								   GetSQLValueString($_POST['kode_kriteria'], "text"),
-								   GetSQLValueString($_POST['id_peserta'.$jmlh], "int"));
+								   GetSQLValueString($_POST['id'.$jmlh], "int"));
 								   
 			  mysql_select_db($database_koneksi, $koneksi);
 			  $Result1 = mysql_query($insertSQL, $koneksi) or die(mysql_error());
@@ -46,14 +51,14 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
 		  }else{
 			//----- untuk menampilkan jumlah banyaknya peserta untuk dilakukan looping
 			  mysql_select_db($database_koneksi, $koneksi);
-			  $query_rs_peserta = "SELECT * FROM tb_peserta";
+			  $query_rs_peserta = "SELECT * FROM tbl_cs";
 			  $rs_peserta = mysql_query($query_rs_peserta, $koneksi) or die(mysql_error());
 			  $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
 				
 			  for($jmlh = 1; $jmlh <= $totalRows_rs_peserta; $jmlh++) {
-			  $insertSQL = sprintf("INSERT INTO tb_result (kode_kriteria, id_peserta, nilai) VALUES (%s, %s, %s)",
+			  $insertSQL = sprintf("INSERT INTO tb_result (kode_kriteria, id, nilai) VALUES (%s, %s, %s)",
 								   GetSQLValueString($_POST['kode_kriteria'], "text"),
-								   GetSQLValueString($_POST['id_peserta'.$jmlh], "int"),
+								   GetSQLValueString($_POST['id'.$jmlh], "int"),
 								   GetSQLValueString($_POST['nilai'.$jmlh], "double"));
 			
 			  mysql_select_db($database_koneksi, $koneksi);
@@ -117,14 +122,14 @@ $noz = 0;
 // exit;
 //--------------- untuk mengisi data combox 1 dan 2
 mysql_select_db($database_koneksi, $koneksi);
-$query_rs_kriteria1 = "SELECT * FROM tb_peserta";
+$query_rs_kriteria1 = "SELECT * FROM tbl_cs";
 $rs_kriteria1 = mysql_query($query_rs_kriteria1, $koneksi) or die(mysql_error());
 $row_rs_kriteria1 = mysql_fetch_assoc($rs_kriteria1);
 $totalRows_rs_kriteria1 = mysql_num_rows($rs_kriteria1);
 $totalRows_rs_rasio =  $totalRows_rs_kriteria1;
 
 mysql_select_db($database_koneksi, $koneksi);
-$query_rs_kriteria2 = "SELECT * FROM tb_peserta";
+$query_rs_kriteria2 = "SELECT * FROM tbl_cs";
 $rs_kriteria2 = mysql_query($query_rs_kriteria2, $koneksi) or die(mysql_error());
 $row_rs_kriteria2 = mysql_fetch_assoc($rs_kriteria2);
 $totalRows_rs_kriteria2 = mysql_num_rows($rs_kriteria2);
@@ -138,7 +143,7 @@ $totalRows_rs_intensitas = mysql_num_rows($rs_intensitas);
 
 //--------------- untuk menampilkan jumlah baris dan kolom berdasarkan jumlah peserta
 mysql_select_db($database_koneksi, $koneksi);
-$query_rs_peserta = "SELECT * FROM tb_peserta";
+$query_rs_peserta = "SELECT * FROM tbl_cs";
 $rs_peserta = mysql_query($query_rs_peserta, $koneksi) or die(mysql_error());
 $row_rs_peserta = mysql_fetch_assoc($rs_peserta);
 $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
@@ -148,7 +153,7 @@ $jumlahPeserta = mysql_num_rows($rs_peserta);
 <?php require_once('timeline/4.php'); ?>   
 </div>
 
-<h3><strong><?php echo $row_rs_kriteria['nama_kriteria']; ?> ( <?php echo $row_rs_kriteria['kode_kriteria']; ?> )</strong></h3>
+<h3><strong><?php echo $row_rs_kriteria['nama_kriteria']; ?> ( <?php echo $row_rs_kriteria['kode_kriteria']; ?> )</strong></h3><!-- nama kriteria yang dipilih -->
 
 
 
@@ -161,7 +166,7 @@ $jumlahPeserta = mysql_num_rows($rs_peserta);
         <?php 
 do {  
 ?>
-        <option value="<?php echo $row_rs_kriteria1['id_peserta']?>"><?php echo $row_rs_kriteria1['nama_peserta']?></option>
+        <option value="<?php echo $row_rs_kriteria1['id']?>"><?php echo $row_rs_kriteria1['nama']?></option>
         <?php
 } while ($row_rs_kriteria1 = mysql_fetch_assoc($rs_kriteria1));
 ?>
@@ -172,7 +177,7 @@ do {
         <?php 
 do {  
 ?>
-        <option value="<?php echo $row_rs_kriteria2['id_peserta']?>"><?php echo $row_rs_kriteria2['nama_peserta']?></option>
+        <option value="<?php echo $row_rs_kriteria2['id']?>"><?php echo $row_rs_kriteria2['nama']?></option>
         <?php
 } while ($row_rs_kriteria2 = mysql_fetch_assoc($rs_kriteria2));
 ?>
@@ -211,12 +216,12 @@ do {
     <?php for($i=1; $i <= $jumlahPeserta; $i++){ 
 	//MENAMPILKAN DATA KRITERIA HORIZONTAL
 	mysql_select_db($database_koneksi, $koneksi);
-	$query_rs_kolom = "SELECT * FROM tb_peserta WHERE id_peserta = $i";
+	$query_rs_kolom = "SELECT * FROM tbl_cs WHERE id = $i";
 	$rs_kolom = mysql_query($query_rs_kolom, $koneksi) or die(mysql_error());
 	$row_kolom = mysql_fetch_assoc($rs_kolom);
 	
 	?>
-        <th bgcolor="#006699"><span class="style1"><?= $row_kolom['nama_peserta'];?></span> </th>
+        <th bgcolor="#006699"><span class="style1"><?= $row_kolom['nama'];?></span> </th>
     <?php } ?>    
 
     </tr>
@@ -225,12 +230,12 @@ do {
 
 //MENAMPILKAN DATA KRITERIA VERTICAL
 	mysql_select_db($database_koneksi, $koneksi);
-	$query_rs_baris = "SELECT * FROM tb_peserta WHERE id_peserta = $i";
+	$query_rs_baris = "SELECT * FROM tbl_cs WHERE id = $i";
 	$rs_baris = mysql_query($query_rs_baris, $koneksi) or die(mysql_error());
 	$row_baris = mysql_fetch_assoc($rs_baris);
 ?>
 <tr>
-<th bgcolor="#006699"><span class="style1"><?= $row_baris['nama_peserta']; ?></span></th>
+<th bgcolor="#006699"><span class="style1"><?= $row_baris['nama']; ?></span></th>
 <?php for($j=1; $j<= $jumlahPeserta; $j++){ ?>
 <td><?php 
 	$angkabaru[$i][$j]=$angka[$no];
@@ -265,11 +270,11 @@ for($i=1; $i <= $jumlahPeserta; $i++){
     <?php for($i=1; $i <= $jumlahPeserta; $i++){ 
 	//MENAMPILKAN DATA KRITERIA HORIZONTAL
 	mysql_select_db($database_koneksi, $koneksi);
-	$query_rs_kolom = "SELECT * FROM tb_peserta WHERE id_peserta = $i";
+	$query_rs_kolom = "SELECT * FROM tbl_cs WHERE id = $i";
 	$rs_kolom = mysql_query($query_rs_kolom, $koneksi) or die(mysql_error());
 	$row_kolom = mysql_fetch_assoc($rs_kolom);
 	?>
-        <th bgcolor="#006699"><span class="style1"><?= $row_kolom['nama_peserta']; ?></span> </th>
+        <th bgcolor="#006699"><span class="style1"><?= $row_kolom['nama']; ?></span> </th>
       <?php } ?>    
       <th bgcolor="#006699"><span class="style1">JUMLAH</span> </th>
       <th bgcolor="#006699"><span class="style1">RATA-RATA</span> </th>
@@ -280,13 +285,13 @@ for($i=1; $i <= $jumlahPeserta; $i++){
 for($x=1; $x <= $jumlahPeserta; $x++){ 
 //MENAMPILKAN DATA KRITERIA VERTICAL
 	mysql_select_db($database_koneksi, $koneksi);
-	$query_rs_baris = "SELECT * FROM tb_peserta WHERE id_peserta = $x";
+	$query_rs_baris = "SELECT * FROM tbl_cs WHERE id = $x";
 	$rs_baris = mysql_query($query_rs_baris, $koneksi) or die(mysql_error());
 	$row_baris = mysql_fetch_assoc($rs_baris);
 
 ?>
 <tr>
-    <th bgcolor="#006699"><span class="style1"><?= $row_baris['nama_peserta']; ?></span></th>
+    <th bgcolor="#006699"><span class="style1"><?= $row_baris['nama']; ?></span></th>
     <?php
 	$total = 0;
 
@@ -309,7 +314,7 @@ for($x=1; $x <= $jumlahPeserta; $x++){
     <?php $rata += $rata2; ?>
     <input type="hidden" name="kode_kriteria" value="<?php echo $row_rs_kriteria['kode_kriteria']; ?>" />
     <input type="hidden" name="nilai<?php echo $x; ?>" value="<?php $rata2 = $total / $jumlahPeserta; echo number_format($rata2,7); ?>" />
-    <input type="hidden" name="id_peserta<?php echo $x; ?>" value="<?php echo $x; ?>" />
+    <input type="hidden" name="id<?php echo $x; ?>" value="<?php echo $x; ?>" />
     </td>
 </tr>
 

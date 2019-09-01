@@ -67,7 +67,7 @@ input[type=text] {
 
 
 
-    <div class="container">
+    <div class="container" style="margin-top: 30px">
         <h2>Tambah data KK, NIK, Jurusan, Asrama</h2>
     <hr>
     <!-- <a class="btn btn-secondary" href="http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/data_siswa"> << Home</a>
@@ -77,7 +77,7 @@ input[type=text] {
 
             
     <label for="exampleFormControlInput1">Nama</label> 
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama siswa" name="nama" value=<?php echo $nama;?>>
+    <input type="text" class="form-control" id="exampleFormControlInput1" disabled placeholder="Masukan nama siswa" name="nama" value=<?php echo $nama;?>>
   
 
   
@@ -91,8 +91,14 @@ input[type=text] {
   
 
   
-    <label for="exampleFormControlInput1">Jurusan</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama jurusan" name="jurusan" value=<?php echo $jurusan;?>>
+    <div class="form-group">
+  <label for="sel1">Pilih jurusan :</label>
+  <select class="form-control" id="sel1" name="keterangan">
+    <option value="menjahit">Menjahit</option>
+    <option value="eletronik">Eletronik</option>
+    <option value="motor">Motor</option>
+  </select>
+</div>
   
 
   
@@ -102,7 +108,7 @@ input[type=text] {
 
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input class="btn btn-secondary" type="submit" name="update" value="Update"></td>
+                <td><input class="btn btn-primary" type="submit" name="update" value="Update"></td>
             </tr>
   
     </form>

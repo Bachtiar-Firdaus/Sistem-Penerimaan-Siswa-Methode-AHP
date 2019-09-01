@@ -1,7 +1,7 @@
 <?php  
 
 mysql_select_db($database_koneksi, $koneksi);
-$query_rs_id = "SELECT * FROM tb_peserta ORDER BY id_peserta ASC";
+$query_rs_id = "SELECT * FROM tbl_cs ORDER BY id ASC";
 $rs_id = mysql_query($query_rs_id, $koneksi) or die(mysql_error());
 $row_rs_id = mysql_fetch_assoc($rs_id);
 $totalRows_rs_id = mysql_num_rows($rs_id);
@@ -12,20 +12,20 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
-  $updateSQL = sprintf("UPDATE tb_peserta SET nama_peserta=%s WHERE id_peserta=%s",
-                       GetSQLValueString($_POST['nama_peserta'], "text"),
-                       GetSQLValueString($_POST['id_peserta'], "int"));
+  $updateSQL = sprintf("UPDATE tbl_cs SET nama=%s WHERE id=%s",
+                       GetSQLValueString($_POST['nama'], "text"),
+                       GetSQLValueString($_POST['id'], "int"));
 
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($updateSQL, $koneksi) or die(mysql_error());
 }
 
 $colname_rs_peserta = "-1";
-if (isset($_GET['id_peserta'])) {
-  $colname_rs_peserta = $_GET['id_peserta'];
+if (isset($_GET['id'])) {
+  $colname_rs_peserta = $_GET['id'];
 }
 mysql_select_db($database_koneksi, $koneksi);
-$query_rs_peserta = sprintf("SELECT * FROM tb_peserta WHERE id_peserta = %s", GetSQLValueString($colname_rs_peserta, "int"));
+$query_rs_peserta = sprintf("SELECT * FROM tbl_cs WHERE id = %s", GetSQLValueString($colname_rs_peserta, "int"));
 $rs_peserta = mysql_query($query_rs_peserta, $koneksi) or die(mysql_error());
 $row_rs_peserta = mysql_fetch_assoc($rs_peserta);
 $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
@@ -39,7 +39,7 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
   <table width="100%" height="75">
     <tr valign="baseline">
       <td nowrap="nowrap">Nama</td>
-      <td><input type="text" name="nama_peserta" value="<?php echo htmlentities($row_rs_peserta['nama_peserta'], ENT_COMPAT, 'utf-8'); ?>" size="32" class="form-control" /></td>
+      <td><input type="text" name="nama" value="<?php echo htmlentities($row_rs_peserta['nama'], ENT_COMPAT, 'utf-8'); ?>" size="32" class="form-control" /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap">&nbsp;</td>
@@ -47,7 +47,7 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
     </tr>
   </table>
   <input type="hidden" name="MM_update" value="form1" />
-  <input type="hidden" name="id_peserta" value="<?php echo $row_rs_peserta['id_peserta']; ?>" />
+  <input type="hidden" name="id" value="<?php echo $row_rs_peserta['id']; ?>" />
 </form>
 </div>
 <div class="col-md-6">
@@ -62,8 +62,8 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
   <?php $no = 1; do { ?>
     <tr>
       <td align="center"><?php echo $no++; ?></td>
-      <td><?php echo $row_rs_id['nama_peserta']; ?></td>
-      <td><a href="?page=update/alternatif&id_peserta=<?php echo $row_rs_id['id_peserta']; ?>">Edit Peserta</a></td>
+      <td><?php echo $row_rs_id['nama']; ?></td>
+      <td><a href="?page=update/alternatif&id=<?php echo $row_rs_id['id']; ?>">Edit Peserta</a></td>
     </tr>
     <?php } while ($row_rs_id = mysql_fetch_assoc($rs_id)); ?>
 </table> 

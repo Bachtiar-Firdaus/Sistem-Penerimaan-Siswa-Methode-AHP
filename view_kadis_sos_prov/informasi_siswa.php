@@ -1,9 +1,17 @@
+<link href="assetss/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assetss/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="assetss/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+
 <?php
 // Create database connection using config file
 include_once("\insert\config.php");
 
 // Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+// $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
+
+// $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs order by id DESC ");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where keterangan = 'diterima' ");
 ?>
 <style type="text/css">
 	tr, td,th{
@@ -19,7 +27,33 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 <div class="containeredit">
 
+
+
 <h3>Informasi Siswa</h3><hr><br>
+
+
+<form method="post" action="view_kadis_sos_prov/cetak_info_siswa.php">
+
+  <!-- <select name="keterangan">
+  <option value="diterima">Diterima</option>
+  <option value="menjahit">Menjahit</option>
+  <option value="elektronik">Elektronik</option>
+  <option value="motor">Motor</option>
+</select> -->
+
+<select name="jurusan">
+  <option value="menjahit">Menjahit</option>
+  <option value="motor">Motor</option>
+  <option value="elektronik">Elektronik</option>
+</select>
+
+<input type="date" name="tanggal">
+
+<tr>
+                <td><input class="btn btn-primary" type="submit" name="search" value="Sortir Data"></td>
+            </tr>
+
+</form><br>
 
 
 
@@ -31,6 +65,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 		<th>Nama</th>
 		<th>Jurusan</th>
 		<th>Kabupaten</th>
+		<th>Keterangan</th>
+		<th>Tanggal</th>
 	
      </tr>
      </thead>
@@ -42,7 +78,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
         echo "<td>".$no++."</td>";
         echo "<td>".$user_data['nama']."</td>"; 
         echo "<td>".$user_data['jurusan']."</td>"; 
-        echo "<td>".$user_data['alko']."</td></tr>";        
+        echo "<td>".$user_data['alko']."</td>";        
+        echo "<td>".$user_data['keterangan']."</td>";        
+        echo "<td>".$user_data['tanggal']."</td></tr>";        
     }
     ?>
     </tbody>

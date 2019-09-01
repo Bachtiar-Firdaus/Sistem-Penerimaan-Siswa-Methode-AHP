@@ -213,7 +213,7 @@ for($i=1; $i <= $jumlahKriteria; $i++){
 
 <hr />
 <form action="<?php echo $editFormAction; ?>" method="post" name="form2" id="form2">
-<p><input type="submit" value=" SIMPAN HASIL KRITERIA " class="btn btn-warning btn-block btn-lg" /></p>
+<p><input type="submit" value=" SIMPAN HASIL KRITERIA " class="btn btntn-warning btn-block btn-lg" /></p>
 
 <table border="1" class="table table-striped table-hover table-bordered">
     <tr>

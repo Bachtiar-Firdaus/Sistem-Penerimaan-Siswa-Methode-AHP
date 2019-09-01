@@ -1,3 +1,6 @@
+<link href="assetss/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assetss/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="assetss/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <?php  
 
@@ -9,7 +12,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   $kosong1 = "TRUNCATE TABLE tb_kriteria";
   $kosong2 = "TRUNCATE TABLE tb_result"; 
-  $kosong3 = "TRUNCATE TABLE tb_peserta"; 
+  $kosong3 = "TRUNCATE TABLE tbl_cs"; 
   $kosong4 = "TRUNCATE TABLE temp_nilai"; 
   $kosong5 = "TRUNCATE TABLE temp_nilai_peserta";
 
@@ -37,7 +40,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 }
 
 mysql_select_db($database_koneksi, $koneksi);
-$query_rs_result = "SELECT * FROM view_total ORDER BY total ASC";
+$query_rs_result = "SELECT * FROM view_total ORDER BY total DESC";
 $rs_result = mysql_query($query_rs_result, $koneksi) or die(mysql_error());
 $row_rs_result = mysql_fetch_assoc($rs_result);
 $totalRows_rs_result = mysql_num_rows($rs_result);
@@ -64,11 +67,12 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
     <th width="28%"><span class="style1">TOTAL</span></th>
   </tr>
   </thead>
+
   <tbody>
   <?php $no = 1; do { ?>
     <tr>
       <td align="center"><?php echo $no++; ?></td>
-      <td><?php echo $row_rs_result['nama_peserta']; ?></td>
+      <td><?php echo $row_rs_result['nama']; ?></td>
       <td><?php echo number_format($row_rs_result['total'],3); ?></td>
     </tr>
     <?php } while ($row_rs_result = mysql_fetch_assoc($rs_result)); ?>
@@ -123,7 +127,7 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
 
             <tr> 
                 <td></td>
-                <td><input type="submit" name="Submit" value="sort"></td>
+                <td><input  class="btn btn-primary" type="submit" name="Submit" value="Sortir Data"></td>
             </tr>
 
   </table>
@@ -141,8 +145,11 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
 // Create database connection using config file
 include_once("view_ps_uptd\config.php");
 
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+// $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs");
 // Fetch all tbl_cs data from database
+
+// $total = mysqli_query($mysqli, "SELECT * FROM view_total ORDER BY total DESC limit 2");
 
 ?>
 
@@ -178,6 +185,7 @@ th, td {
         <th>No</th>
         <th>Nama Peserta</th>
         <th>Kabupaten</th>
+        <th>Keterangan</th>
         <th>Total</th>
         <th>Aksi</th>
     </tr>
@@ -190,6 +198,7 @@ th, td {
         echo "<td>".$no++."</td>";        
         echo "<td>".$user_data['nama']."</td>"; 
         echo "<td>".$user_data['alko']."</td>"; 
+        echo "<td>".$user_data['keterangan']."</td>"; 
         echo "<td>".$user_data['tot']."</td>"; 
         echo "<td><a href='/program_april/view_ps_uptd/edit_tot_cs.php?id=$user_data[id]'>Edit</a></td></tr>";        
     }

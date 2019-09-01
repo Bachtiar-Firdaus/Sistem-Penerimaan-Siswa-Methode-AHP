@@ -1,0 +1,10 @@
+analisa ( ps_uptd )
+ - hasil ranking bentuk tabel
+ - hasil ranking bentuk grafik
+
+upload surat .... informasi
+ - surat pernyataan
+ - surat pemanggilan & data siswa
+
+
+

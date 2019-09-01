@@ -1,3 +1,8 @@
+<link href="assetss/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assetss/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="assetss/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+
 
 <?php
 // Create database connection using config file
@@ -22,8 +27,26 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan
 
 <h3>Laporan Kegiatan Data Siswa</h3><hr><br>
 
+<form method="post" action="view_pendamping/data_sortir.php">
 
 
+
+  <select name="jurusan">
+  <option value="">Pilih Jurusan</option>
+  <option value="menjahit">Menjahit</option>
+  <option value="elektronik">Elektronik</option>
+  <option value="motor">Motor</option>
+</select>
+
+<input type="date" name="tanggal">
+
+<tr>
+                <td><input class="btn btn-primary" type="submit" name="search" value="Cetak"></td>
+            </tr>
+
+</form><br>
+
+<form action="view_kadis_sos_prov/cetak_seluruh_kegiatan.php" method="post">
 <table id="example2" border="1" class="table table-bordered table-hover">
   <thead>
   <tr>
@@ -58,7 +81,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan
     
   
   </tbody>
-</table><br><br>
+
+</table>
+<button class="btn btn-primary" type="submit">Cetak</button>
+</form>
+
+<br><br>
 
 <!-- <a href="view_pendamping\cetak_kk.php" class="btn btn-primary">Cetak</a> -->
 

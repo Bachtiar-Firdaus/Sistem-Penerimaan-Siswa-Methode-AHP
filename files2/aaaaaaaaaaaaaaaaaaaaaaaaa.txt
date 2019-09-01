@@ -1,0 +1,14 @@
+DELIMITER $$
+
+ALTER ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_total` AS (
+SELECT
+  `tbl_cs`.`nama` AS `nama`,
+  SUM((`tb_result`.`nilai` * `tb_kriteria`.`nilai_kriteria`)) AS `total`
+FROM ((`tb_result`
+    JOIN `tb_kriteria`
+      ON ((`tb_result`.`kode_kriteria` = `tb_kriteria`.`kode_kriteria`)))
+   JOIN `tbl_cs`
+     ON ((`tb_result`.`id` = `tbl_cs`.`id`))))$$
+GROUP BY `tb_result`.`id`$$
+
+DELIMITER ;

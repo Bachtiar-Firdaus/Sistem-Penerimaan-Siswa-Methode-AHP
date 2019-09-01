@@ -96,6 +96,11 @@ if ($totalRows_rs_kriteria == 0) {
         <td><?php echo $row_rs_kriteria['kode_kriteria']; ?></td>
         <td><a href="?page=alternatif&kode=<?php echo $row_rs_kriteria['kode_kriteria']; ?>"><?php echo $row_rs_kriteria['nama_kriteria']; ?></a></td>
         <td align="center"><a href="?page=update/kriteria&id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Change</a></td>
+
+        <td align="center"><a href="insert/delete_kriteria.php?id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Delete</a></td>
+        
+
+        
       </tr>
       <?php } while ($row_rs_kriteria = mysql_fetch_assoc($rs_kriteria)); ?>
   </table>

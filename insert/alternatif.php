@@ -8,15 +8,15 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO tb_peserta (nama_peserta) VALUES (%s)",
-                       GetSQLValueString($_POST['nama_peserta'], "text"));
+  $insertSQL = sprintf("INSERT INTO tbl_cs (nama) VALUES (%s)",
+                       GetSQLValueString($_POST['nama'], "text"));
 
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($insertSQL, $koneksi) or die(mysql_error());
   
     //----tampilkan data kriteria---
     mysql_select_db($database_koneksi, $koneksi);
-	$query_rs_kriteria = "SELECT id_peserta FROM tb_peserta ORDER BY id_peserta ASC";
+	$query_rs_kriteria = "SELECT id FROM tbl_cs ORDER BY id ASC";
 	$rs_kriteria = mysql_query($query_rs_kriteria, $koneksi) or die(mysql_error());
 	$totalRows_rs_kriteria = mysql_num_rows($rs_kriteria);
   
@@ -42,7 +42,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
 
 mysql_select_db($database_koneksi, $koneksi);
-$query_rs_peserta = "SELECT * FROM tb_peserta ORDER BY id_peserta ASC";
+$query_rs_peserta = "SELECT * FROM tbl_cs ORDER BY id ASC";
 $rs_peserta = mysql_query($query_rs_peserta, $koneksi) or die(mysql_error());
 $row_rs_peserta = mysql_fetch_assoc($rs_peserta);
 $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
@@ -65,7 +65,7 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
   <table width="100%" height="75">
     <tr valign="baseline">
       <td nowrap="nowrap">Nama</td>
-      <td><input type="text" name="nama_peserta" value="" size="32" class="form-control" /></td>
+      <td><input type="text" name="nama" value="" size="32" class="form-control" /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap">&nbsp;</td>
@@ -76,20 +76,20 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
 </form> 
 </div>
 <div class="col-md-6">
-
 <table width="100%" class="table table-striped table-bordered table-hover">
 <thead>
   <tr align="center" bgcolor="#003366">
     <th width="5%"><span class="style1">NO.</span></th>
     <th width="76%"><span class="style1">NAMA</span></th>
-    <!-- <th width="19%"><span class="style1"> </span></th> -->
+    <th width="19%"><span class="style1"> </span></th> 
   </tr>
   </thead>
   <?php $no = 1; do { ?>
     <tr>
       <td align="center"><?php echo $no++; ?></td>
-      <td><?php echo $row_rs_peserta['nama_peserta']; ?></td>
-      <!-- <td><a href="?page=update/peserta&id_peserta=<?php echo $row_rs_peserta['id_peserta']; ?>">Edit Peserta</a></td> -->
+      <td><?php echo $row_rs_peserta['nama']; ?></td>
+      <td><a href="?page=update/alternatif&id=<?php echo $row_rs_peserta['id']; ?>">Edit Peserta</a></td>
+      <td><a href="insert/delete_alternatife.php?id=<?php echo $row_rs_peserta['id']; ?>">Delete</a></td>
     </tr>
     <?php } while ($row_rs_peserta = mysql_fetch_assoc($rs_peserta)); ?>
 </table> 

@@ -8,7 +8,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   $kosong1 = "TRUNCATE TABLE tb_kriteria";
   $kosong2 = "TRUNCATE TABLE tb_result"; 
-  $kosong3 = "TRUNCATE TABLE tb_peserta"; 
+  $kosong3 = "TRUNCATE TABLE tbl_cs"; 
   $kosong4 = "TRUNCATE TABLE temp_nilai"; 
   $kosong5 = "TRUNCATE TABLE temp_nilai_peserta";
 
@@ -74,7 +74,7 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
   <?php $no = 1; do { ?>
     <tr>
       <td align="center"><?php echo $no++; ?></td>
-      <td><?php echo $row_rs_result['nama_peserta']; ?></td>
+      <td><?php echo $row_rs_result['nama']; ?></td>
       <td><?php echo number_format($row_rs_result['total'],3); ?></td>
     </tr>
     <?php } while ($row_rs_result = mysql_fetch_assoc($rs_result)); ?>

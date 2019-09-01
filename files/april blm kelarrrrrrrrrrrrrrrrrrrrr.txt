@@ -1,0 +1,5 @@
+1. edit alternatif
+2. grafik
+3. edit alternativ table hilang
+4. login
+5. kelola kegiatan

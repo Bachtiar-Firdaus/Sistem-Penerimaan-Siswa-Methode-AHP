@@ -29,7 +29,7 @@ th, td {
 
 <div class="containeredit">
 
-<h3>Rekap Data Siswa </h3><br>
+<h3>Rekap Data Penerimaan Siswa</h3><br>
 
 
 
@@ -46,9 +46,11 @@ th, td {
 		<th>Kecamatan </th>
 		<th>Kabupaten</th>
 		<th>No KK</th>
-		<th>NIK</th>
+		<!-- <th>NIK</th> -->
 		<th>Jurusan</th>
 		<th>Asrama</th>
+    <th>Keterangan</th>
+    <th>Tanggal</th>
 	</tr>
      </thead>
 
@@ -66,9 +68,11 @@ th, td {
         echo "<td>".$user_data['alk']."</td>";          
         echo "<td>".$user_data['alko']."</td>";          
         echo "<td>".$user_data['nokk']."</td>";          
-        echo "<td>".$user_data['nik']."</td>";          
+        // echo "<td>".$user_data['nik']."</td>";          
         echo "<td>".$user_data['jurusan']."</td>";          
         echo "<td>".$user_data['asrama']."</td>";           
+        echo "<td>".$user_data['keterangan']."</td>";           
+        echo "<td>".$user_data['tanggal']."</td>";           
     }
     ?>
     </tbody>

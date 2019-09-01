@@ -31,31 +31,17 @@ th, td {
 </style>
 
 <body>
-
-  <div class="container" style="margin-top: 30px;"> 
-  <h3>Identifikasi calon siswa</h3> <hr>
-    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan"> << Kembali</a>
+    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">Go to Home</a>
     <br/><br/>
 
     <form action="add_ip.php" method="post" name="form1">
-
-
-
-<div class="form-group">
-<label>Pilih Nama siswa :</label>
-<select class="form-control" name="nama_cs">
-
-  <?php while($user_data = mysqli_fetch_array($result)) {  ?>
-
-    <option><?php  echo "<td>".$user_data['nama'];?></option>
-
-  <?php     
-    }
+<select name = "nama_cs" >
+<option >pilih siswa</option>
+<?php while($user_data = mysqli_fetch_array($result)) {  ?>
+<option><?php  echo "<td>".$user_data['nama'];?></option>
+<?php     }
   ?>
-
 </select>
-</div>
-
 
       <!-- <table border="1">
     <tr>
@@ -665,12 +651,11 @@ th, td {
 
             <tr> 
                 <td></td>
-                <td><input class="btn btn-primary" type="submit" name="Submit" value="Tambah"></td>
+                <td><input class="btn btn-primary" type="submit" name="Submit" value="Add"></td>
             </tr>
 
   </table>
     </form>
-     </div>
 
     <?php
 

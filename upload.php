@@ -1,15 +1,3 @@
-<!-- <html>
-<title>Form Upload</title>
-<body>
-<form enctype="multipart/form-data" method="POST" action="proses.php">
-Upload File pemanggilan siswa & data siswa : <input type="file" name="fupload"><br>
-Jenis Surat : <br>
-<textarea name="deskripsi" rows="8" cols="40"></textarea><br>
-<input type=submit value=Upload>
-</form>
- -->
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,22 +12,30 @@ Jenis Surat : <br>
   </head>
   <body>
 
-<div class="container" style="margin-top: 30px;">
+<div class="container">
 
 	<h2>Form Upload File</h2>
 	<hr>
 
-<form enctype="multipart/form-data" method="POST" action="proses.php">
+<form enctype="multipart/form-data" method="POST" action="proses2.php">
 	<div class="form-group">
     <label for="exampleFormControlFile1">Upload File pemanggilan siswa & data siswa</label>
     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="fupload">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Jenis Surat</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi"></textarea>
+    <label for="exampleFormControlTextarea1">Nama</label>
+    <textarea class="form-control" id="exampleFormControlTextarea2" rows="2" name="nama"></textarea>
   </div>
-  <input class="btn btn-primary" type=submit value=Upload>
-</form> 
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Nama Berkas</label>
+    <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" name="nama"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Jenis Surat</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="deskripsi"></textarea>
+  </div>
+  <input type=submit value=Upload>
+</form>
 
 </div>
 

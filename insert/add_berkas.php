@@ -1,3 +1,10 @@
+<?php
+// Create database connection using config file
+include_once("config.php");
+
+// Fetch all tbl_cs data from database
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where con !='2'");
+?>
 
 
 <!doctype html>
@@ -19,22 +26,34 @@
   		<h2>Upload berkas ijazah dan KTP</h2>
   		<hr>
 
-  		<form class="was-validated">
+  		<form class="was-validated" action="proses_upload.php" method="post">
   
 
+    
+
+
+  <select name = "nama_cs" >
+<option >pilih siswa</option>
+<?php while($user_data = mysqli_fetch_array($result)) {  ?>
+<option><?php  echo "<td>".$user_data['nama'];?></option>
+<?php     }
+  ?>
+</select>
+
   <div class="custom-file">
-    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+    <input type="file" name="file_i" class="custom-file-input" id="validatedCustomFile" required>
     <label class="custom-file-label" for="validatedCustomFile">Upload file izasah</label>
     <div class="invalid-feedback">Example invalid custom file feedback</div>
   </div><br><br>
 
   <div class="custom-file">
-    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+    <input type="file" name="file_k" class="custom-file-input" id="validatedCustomFile" required>
     <label class="custom-file-label" for="validatedCustomFile">Upload file KTP</label>
     <div class="invalid-feedback">Example invalid custom file feedback</div>
   </div><br><br>
 
-  <button type="button" class="btn btn-primary">Simpan</button>
+  <!-- <button type="button" class="btn btn-primary">Simpan</button> -->
+  <input type="submit" value="upload">
 
 </form>
 

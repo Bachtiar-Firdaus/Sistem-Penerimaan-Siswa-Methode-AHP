@@ -1,0 +1,51 @@
+psmkb
+1. m_daftar
+   1. data siswa
+   2. pertanyaan
+2. upload_berkas
+3. unduh surat dari ps uptd
+                           1. surat_panggilan
+                           2. surat_pernyataan
+4. informasi dari ps uptd
+                         1. info_seleksi
+                         2. info_bimbingan
+
+kadis sos p
+1. liat hasil nilai dari ps uptd
+2. liat laporan dari pendamping
+                              1. mental
+                              2. sosial
+                              3. keterampilan
+3. liat laporan dari ps uptd
+                            1. datasiswa
+
+
+inspektorat
+1. liat laporan siswa dari pendamping
+                              1. mental
+                              2. sosial
+                              3. keterampilan
+
+2. liat laporan siswa dari ps uptd
+                            1. datasiswa
+
+ps uptd
+1. m_datakriteria
+2. m_datapenilaian
+3. m_datasiswa
+4. m_datapendamping
+5. m_surat 
+          1. surat_panggilan
+          2. surat_pernyataan
+
+6. m_informasi
+              1. info_seleksi
+              2. info_bimbingan
+7. m_laporandatasiswa
+
+pendamping
+1. m_laporandatasiswa
+                     1. mental
+                     2. sosial
+                     3. keterampilan
+                               

@@ -10,7 +10,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
 
 <head>    
     <title>IDENTIFIKASI CALON SISWA</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -31,9 +31,9 @@ th, td {
 }
 </style>
 
-<h3>Tambah calon siswa</h3>
+<h3>Lengkapi data siswa</h3>
 <hr>
-<a class="btn btn-primary" href="insert/add_cs.php">Tambah</a><br/><br/>
+<!-- <a class="btn btn-primary" href="insert/add_cs.php">Tambah</a><br/><br/> -->
 
     <table class="tableee" border=1>
     <tr>
@@ -55,6 +55,8 @@ th, td {
                 <th>Pernah Bekerja</th>
                 <th>pernah bekerja di</th>
                 <th>gajih/perbulan</th>
+                <th>Keterangan</th>
+                <th>Tanggal</th>
                 <th>Action</th>
      </tr>
     <?php  
@@ -79,6 +81,8 @@ th, td {
         echo "<td>".$user_data['pb']."</td>";     
         echo "<td>".$user_data['bpbd']."</td>";     
         echo "<td>".$user_data['gp']."</td>";    
+        echo "<td>".$user_data['keterangan']."</td>";    
+        echo "<td>".$user_data['tanggal']."</td>";    
         echo "<td><a href='/program_april/insert/edit_cs.php?id=$user_data[id]'>Edit</a> | <a href='/program_april/insert/delete_cs.php?id=$user_data[id]'>Delete</a></td></tr>";        
     }
     ?>

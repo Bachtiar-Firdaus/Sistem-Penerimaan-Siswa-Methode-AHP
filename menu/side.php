@@ -21,14 +21,6 @@
 
       </div>
 
-      <!-- search form -->
-      
-
-      
-
-      <!-- /.search form -->
-
-      <!-- sidebar menu: : style can be found in sidebar.less -->
 
       <ul class="sidebar-menu" data-widget="tree">
 
@@ -46,9 +38,9 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>Calon Siswa</a></li>
+            <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>Edit Data Calon Siswa</a></li>
             <li><a href="?page=insert/input_pertanyaan"><i class="fa fa-circle-o"></i>Input Pertanyaan</a></li>
-            <!-- <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>Upload Berkas</a></li> -->
+            <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>Upload Berkas</a></li>
           </ul>
 
         </li>
