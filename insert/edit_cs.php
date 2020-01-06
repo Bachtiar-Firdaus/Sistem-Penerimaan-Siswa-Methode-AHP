@@ -42,12 +42,13 @@ if(isset($_POST['update']))
     $pekerjaan_ayah = $_POST['pekerjaan_a'];
     $pekerjaan_ibu = $_POST['pekerjaan_i'];
     $jumlah_saudara = $_POST['jumlah_s'];
+    $gajih_orang_tua = $_POST['gajih_orang_tua'];
 
     // update user data
-    $result = mysqli_query($mysqli, "UPDATE tbl_cs SET nama = '$nama',umur = '$umur', jk = '$jk', ttl = '$ttl', agama = '$agama', suku = '$suku', bahasa = '$bahasa', ald = '$ald', alk = '$alk', alko = '$alko', ltlsk = '$ltlsk', pt = '$pt', atls = '$atls', km = '$km', mn = '$mn', pb = '$pb', bpbd = '$bpbd', gp = '$gp', tanggal = '$tanggal', keterangan = '$keterangan',nama_ayah = '$nama_ayah',nama_ibu = '$nama_ibu',umur_ayah = '$umur_ayah',umur_ibu = '$umur_ibu',agama_ayah = '$agama_ayah',agama_ibu = '$agama_ibu',alm_desa_ayah = '$alm_desa_ayah',alm_kec_ayah = '$alm_kec_ayah',alm_kab_ayah = '$alm_kab_ayah',alm_desa_ibu = '$alm_desa_ibu',alm_kec_ibu = '$alm_kec_ibu',alm_kab_ibu = '$alm_kab_ibu',pekerjaan_ayah = '$pekerjaan_ayah',pekerjaan_ibu = '$pekerjaan_ibu',jumlah_saudara = '$jumlah_saudara' WHERE id=$id");
+    $result = mysqli_query($mysqli, "UPDATE tbl_cs2 SET nama = '$nama',umur = '$umur', jk = '$jk', ttl = '$ttl', agama = '$agama', suku = '$suku', bahasa = '$bahasa', ald = '$ald', alk = '$alk', alko = '$alko', ltlsk = '$ltlsk', pt = '$pt', atls = '$atls', km = '$km', mn = '$mn', pb = '$pb', bpbd = '$bpbd', gp = '$gp', tanggal = '$tanggal', keterangan = '$keterangan',nama_ayah = '$nama_ayah',nama_ibu = '$nama_ibu',umur_ayah = '$umur_ayah',umur_ibu = '$umur_ibu',agama_ayah = '$agama_ayah',agama_ibu = '$agama_ibu',alm_desa_ayah = '$alm_desa_ayah',alm_kec_ayah = '$alm_kec_ayah',alm_kab_ayah = '$alm_kab_ayah',alm_desa_ibu = '$alm_desa_ibu',alm_kec_ibu = '$alm_kec_ibu',alm_kab_ibu = '$alm_kab_ibu',pekerjaan_ayah = '$pekerjaan_ayah',pekerjaan_ibu = '$pekerjaan_ibu',jumlah_saudara = '$jumlah_saudara',gajih_orang_tua = '$gajih_orang_tua' WHERE id=$id");
 
     // Redirect to homepage to display updated user in list
-    header("Location: http://localhost/program_april/dashboard.php?page=insert/calon_siswa");
+    header("Location: http://localhost/siks_ahp/dashboard.php?page=insert/calon_siswa");
 }
 ?>
 <?php
@@ -56,7 +57,7 @@ if(isset($_POST['update']))
 $id = $_GET['id'];
 
 // Fetech user data based on id
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs WHERE id=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 WHERE id=$id");
 
 while($user_data = mysqli_fetch_array($result))
 {
@@ -76,7 +77,7 @@ while($user_data = mysqli_fetch_array($result))
     $mn = $user_data['mn'];
     $pb = $user_data['pb'];
     $bpbd = $user_data['bpbd'];
-    $gp = $user_data['gp'];
+    $gajih_orang_tua = $user_data['gajih_orang_tua'];
     $keterangan = $user_data['keterangan'];
     $tanggal = $user_data['tanggal'];
 
@@ -108,7 +109,7 @@ th, td {
 <body>
   <div class="container" style="margin-top:30px;">
     <h3>Edit Calon Siswa</h3><hr>
-    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Home</a>
+    <a class="btn btn-primary" href="http://localhost/siks_ahp/dashboard.php?page=insert/calon_siswa">Kembali</a>
     <br/><br/>
 
     <form name="update_user" method="post" action="edit_cs.php">
@@ -116,7 +117,7 @@ th, td {
         <table border="0">
           <!-- sadads -->
           <tr>
-      <td rowspan="12">1</td>
+      <td rowspan="13">1</td>
       <td colspan="9">LATAR BELAKANG KELUARGA</td>
 
 
@@ -219,6 +220,15 @@ th, td {
       <td><input type="text" name="jumlah_s"></td>
       <td>orang</td>
     </tr>
+
+    <tr>
+      <td>7</td>
+      <td>Gajih orang tua</td>
+      <td><input type="text" name="gajih_orang_tua"></td>
+      <!-- <td>orang</td> -->
+    </tr>
+
+                                                                                                                                            
           <!-- sdasd -->
     <tr>
       <td colspan="2" rowspan="30" style="vertical-align: baseline;
@@ -374,14 +384,14 @@ th, td {
 
     <tr>
       <td>16</td>
-      <td>Gajih / Perbulan</td>
-      <td colspan="3">: <input type="text" value="<?php echo $gp;?>" name="gp"></td>
+      <td>Gajih Orang Tua</td>
+      <td colspan="3">: <input type="text" value="<?php echo $gajih_orang_tua;?>" name="gajih_orang_tua"></td>
     </tr>
 
-    <tr>
+    <!-- <tr>
       <td>17</td>
       <td>Keterangan</td>
-      <td colspan="3"><!--  <input type="text" value="<?php echo $keterangan;?>" name="keterangan"> -->
+      <td colspan="3">
 
 <div class="form-group">
   <label for="sel1">Pilih keterangan :</label>
@@ -392,7 +402,7 @@ th, td {
 </div>    
     </td>
 
-    </tr>
+    </tr> -->
 
     <tr>
       <td>18</td>

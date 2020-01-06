@@ -100,7 +100,7 @@
 				<!-- /.box-header -->
 				<div class="box-body">
 
-					<button class="btn btn-primary"><a href="view_ps_uptd\upload.php" style="color: white;">++ Upload Surat</a></button><br><br>
+					<a class="btn btn-primary" href="view_ps_uptd\upload.php" style="color: white;">++ Upload Surat</a><br><br>
 
 					<table id="example2" class="table table-bordered table-hover">
 						<thead>

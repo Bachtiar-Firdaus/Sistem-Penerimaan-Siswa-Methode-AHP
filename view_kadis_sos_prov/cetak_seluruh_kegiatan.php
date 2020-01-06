@@ -6,30 +6,40 @@ include_once("config.php");
 $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan DESC");
 ?>
 <style type="text/css">
-	table, td, th {  
-  border: 1px solid black;
-  text-align: left;
-}
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  overflow: scroll;
-}
+  table, tr,td,th{
+    border :1px solid black;
+    padding: 10px;
+    border-collapse: collapse;
 
-.containeredit{
+  }
+  
+  .containeredit{
     padding: 10px;
     text-align: -webkit-center;
   }
-
-th, td {
-  padding: 7px;
-}
+  .modal-dialog{
+    width:90%;
+  }
 </style>
 
 <div class="containeredit">
 
-<h3>Rekap Data Seluruh Kegiatan Siswa</h3><br>
+
+<div class="row">
+    <p align="center">LAPORAN KEGIATAN SISWA-SISWI</p>
+    <p align="center">UPTD PSBR RADIN INTAN LAMPUNG</p>
+
+    <img src="../img/logo.jpg" style="float: right;
+    position: relative;
+    left: -806px;
+    top: -66px;
+    width: 38px;">
+    
+  </div>
+
+  <hr style="height: 3px;
+    background: black;">
 
 
 
@@ -39,9 +49,9 @@ th, td {
     
     <th>No</th>
     <th>Nama</th>
-    <th>Laporan Kegiatan Mental</th>
-    <th>Laporan Kegiatan Sosial</th>
-    <th>Laporan Kegiatan Keterampilan</th>
+    <th>Bimbingan Keterampilan</th>
+    <th>Bimbingan Mental</th>
+    <th>Bimbingan Sosial dan Fisik</th>
     <th>Jurusan</th>
     <th>Tanggal</th>
 
@@ -62,7 +72,7 @@ th, td {
         echo "<td>".$row['k_keterampilan']."</td>"; 
         echo "<td>".$row['jurusan']."</td>";  
         echo "<td>".$row['tanggal']."</td></tr>";  
-        // echo "<td><a href='/program_april/view_pendamping/edit_kk.php?id=$user_data[id]'>Edit</a></tr>";        
+        // echo "<td><a href='/siks_ahp/view_pendamping/edit_kk.php?id=$user_data[id]'>Edit</a></tr>";        
     }
     ?>
     

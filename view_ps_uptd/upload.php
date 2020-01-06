@@ -31,7 +31,7 @@ Jenis Surat : <br>
 
 <form enctype="multipart/form-data" method="POST" action="proses.php">
 	<div class="form-group">
-    <label for="exampleFormControlFile1">Upload File pemanggilan siswa & data siswa</label>
+    <label for="exampleFormControlFile1">Upload Surat</label>
     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="fupload">
   </div>
   <div class="form-group">

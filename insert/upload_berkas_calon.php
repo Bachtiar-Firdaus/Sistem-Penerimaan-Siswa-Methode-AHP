@@ -4,10 +4,28 @@
 <link href="assetss/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 <?php
 // Create database connection using config file
-include_once("\insert\config.php");
+
+/**
+ * using mysqli_connect for database connection
+ */
+
+$databaseHost = 'localhost';
+$databaseName = 'codegoo_ahp';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+
+
+
 
 // Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_pertanyaan ORDER BY id DESC");
+$query = "SELECT * FROM tbl_upload_cs";
+$sql = mysqli_query($mysqli, $query);
+
+
+
+
 ?>
 
   <div class="row">
@@ -54,20 +72,25 @@ th, td {
           <tr>
             <th>No</th>
             <th>Nama</th>
-            <th>Berkas Ijazah</th>
-            <th>Berkas KTP</th>
-            <!-- <th>Aksi</th> -->
+            <th>FIle Berkas Izajasah & KTP</th>
+            <th>Aksi</th>
           </tr>
 
     <?php  
     $no = "1";
-    while($user_data = mysqli_fetch_array($result)) {         
+    while($data = mysqli_fetch_array($sql)) {         
         echo "<tr>";      
         echo "<td>".$no++."</td>";
-        echo "<td>".$user_data['nama_cs']."</td>";
-        echo "<td></td>";
-        echo "<td></td>";
-        // echo "<td><a href='/program_april/insert/edit_ip.php?id=$user_data[id]'>Cetak</a>";        
+        echo "<td>".$data['nama_cs']."</td>";
+        echo "<td>".$data['nama_file']."</td>";
+         echo "<td><a href='/siks_ahp/insert/edit_berkas.php?id_upload=".$data['id_upload']."'>Edit</a> | <a href='/siks_ahp/insert/delete_berkas.php?id_upload=".$data['id_upload']."'>Delete</a> | <a href='/siks_ahp/insert/download.php?file=".$data['nama_file']."'>Download</a></td></tr>";
+
+
+        // echo "<td></td>";
+        // echo "<td><a href='/siks_ahp/insert/edit_ip.php?id=$user_data[id]'>Cetak</a>";    
+
+    
+
     }
     ?>
         </table>
@@ -80,4 +103,6 @@ th, td {
     </div>
     <!-- /.col -->
   </div>
+
+
 

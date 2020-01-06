@@ -4,11 +4,11 @@
 
       <!-- mini logo for sidebar mini 50x50 pixels -->
 
-      <span class="logo-mini"><b>AHP</b></span>
+      <span class="logo-mini"><b>SIKS AHP</b></span>
 
       <!-- logo for regular state and mobile devices -->
 
-      <span class="logo-lg"><b>SPK AHP</b></span>
+      <span class="logo-lg"><b>SIKS AHP</b></span>
 
     </a>
 
@@ -54,17 +54,17 @@
               <li class="user-header">
                 <img src="assets/dist/img/logo.png" class="img-circle" alt="User Image">
                 <p> <?= $row_rs_users['fullname']; ?>
-                  <small>CODEEGO.COM</small>
+                  <small>Pengguna</small>
                 </p>
               </li>
 
                
               <li class="user-footer">  
-              	<div class="pull-left">
+           <!--    	<div class="pull-left">
  					<a href="?page=view/setting" class="btn btn-default btn-flat">Setting</a>
-                </div>
+                </div> -->
                 <div class="pull-right">
-                  <a href="<?= $logoutAction; ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?= $logoutAction; ?>" class="btn btn-default btn-flat">Logout</a>
                 </div>
               </li>
             </ul>

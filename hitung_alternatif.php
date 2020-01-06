@@ -25,7 +25,7 @@ $totalRows_rs_kriteria = mysql_num_rows($rs_kriteria);
     <td align="center"><?php echo $no++; ?></td>
     <td><?php echo $row_rs_kriteria['kode_kriteria']; ?></td>
     <td><a href="?page=alternatif&amp;kode=<?php echo $row_rs_kriteria['kode_kriteria']; ?>"><?php echo $row_rs_kriteria['nama_kriteria']; ?></a></td>
-    <td align="center"><a href="?page=update/kriteria&amp;id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Change</a></td>
+    <td align="center"><a href="?page=update/kriteria&amp;id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Edit</a></td>
   </tr>
   <?php } while ($row_rs_kriteria = mysql_fetch_assoc($rs_kriteria)); ?>
 </table>

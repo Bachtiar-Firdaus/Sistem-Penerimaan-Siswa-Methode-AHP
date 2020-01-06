@@ -3,7 +3,7 @@
 include_once("\insert\config.php");
 
 // Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 ORDER BY id DESC");
 ?>
 
 <html>
@@ -31,13 +31,14 @@ th, td {
 }
 </style>
 
-<h3>Lengkapi data siswa</h3>
+<h3>Lengkapi data siswa</h3> <a class="btn btn-primary" href="insert/tambah_cs2.php">Tambah CS</a>
 <hr>
 <!-- <a class="btn btn-primary" href="insert/add_cs.php">Tambah</a><br/><br/> -->
 
     <table class="tableee" border=1>
     <tr>
                 <th>No</th>
+                <th>Id</th>
                 <th>Nama</th>
                 <th>Jenis Kelamin</th>
                 <th>Tempat tanggal lahir</th>
@@ -54,7 +55,7 @@ th, td {
                 <th>Mengkonsumsi Narkoba</th>
                 <th>Pernah Bekerja</th>
                 <th>pernah bekerja di</th>
-                <th>gajih/perbulan</th>
+                <th>Gajih Orang Tua</th>
                 <th>Keterangan</th>
                 <th>Tanggal</th>
                 <th>Action</th>
@@ -64,6 +65,7 @@ th, td {
     while($user_data = mysqli_fetch_array($result)) {         
         echo "<tr>";
         echo "<td>".$no++."</td>";
+        echo "<td> 00".$user_data['id']."</td>";
         echo "<td>".$user_data['nama']."</td>";
         echo "<td>".$user_data['jk']."</td>";
         echo "<td>".$user_data['ttl']."</td>";   
@@ -80,13 +82,14 @@ th, td {
         echo "<td>".$user_data['mn']."</td>";     
         echo "<td>".$user_data['pb']."</td>";     
         echo "<td>".$user_data['bpbd']."</td>";     
-        echo "<td>".$user_data['gp']."</td>";    
+        echo "<td>".$user_data['gajih_orang_tua']."</td>";    
         echo "<td>".$user_data['keterangan']."</td>";    
         echo "<td>".$user_data['tanggal']."</td>";    
-        echo "<td><a href='/program_april/insert/edit_cs.php?id=$user_data[id]'>Edit</a> | <a href='/program_april/insert/delete_cs.php?id=$user_data[id]'>Delete</a></td></tr>";        
+        echo "<td><a href='/siks_ahp/insert/edit_cs.php?id=$user_data[id]'>Edit</a> | <a href='/siks_ahp/insert/delete_cs.php?id=$user_data[id]'>Delete</a></td></tr>";        
     }
     ?>
-    </table>
+    </table><br><br>
+    <a href="insert\cetak.php" class="btn btn-primary">Cetak</a>
 </body>
 </html>
 

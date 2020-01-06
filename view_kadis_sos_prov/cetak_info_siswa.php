@@ -13,7 +13,7 @@ if (isset($_POST['search'])) {
 
   // $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
 
-  $query = mysqli_query($mysqli, " SELECT * FROM tbl_cs WHERE tanggal = '$tanggal' AND keterangan = 'diterima' ");
+  $query = mysqli_query($mysqli, " SELECT * FROM tbl_cs2 WHERE tanggal = '$tanggal' AND keterangan = 'diterima' ");
 
   // $query = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 20");
 
@@ -35,7 +35,7 @@ if (isset($_POST['search'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Kadis Sos Prov</title>
   </head>
   <body>
     <style type="text/css">
@@ -52,7 +52,7 @@ if (isset($_POST['search'])) {
 
 <div class="containeredit">
 
-<p align="center">INFORMASI SISWA</p>
+<p align="center">LAPORAN DATA SISWA-SISWI</p>
 <!-- <p align="center">BIMBINGAN KETERAMPILAN </p> -->
 <p align="center">UPTD PSBR RADIN INTAN LAMPUNG</p>
 
@@ -89,7 +89,7 @@ if (isset($_POST['search'])) {
         echo "<td>".$row['alko']."</td>"; 
         echo "<td>".$row['keterangan']."</td>"; 
         echo "<td>".$row['tanggal']."</td></tr>";  
-        // echo "<td><a href='/program_april/view_pendamping/edit_kk.php?id=$user_data[id]'>Edit</a></tr>";        
+        // echo "<td><a href='/siks_ahp/view_pendamping/edit_kk.php?id=$user_data[id]'>Edit</a></tr>";        
     }
     ?>
     

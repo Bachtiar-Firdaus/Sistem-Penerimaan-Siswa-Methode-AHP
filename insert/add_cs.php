@@ -7,7 +7,7 @@
 
 
 <body>
-    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/calon_siswa">Go to Home</a>
+    <a class="btn btn-primary" href="http://localhost/siks_ahp/dashboard.php?page=insert/calon_siswa">Go to Home</a>
     <br/><br/>
 <style>
 table, td, th {  
@@ -184,7 +184,7 @@ th, td {
         $result = mysqli_query($mysqli, "INSERT INTO tbl_cs(nama,jk,ttl,agama,suku,bahasa,ald,alk,alko,ltlsk,pt,atls,km,mn,pb,bpbd,gp) VALUES('$nama','$jk','$ttl','$agama','$suku','$bahasa','$ald','$alk','$alko','$ltlsk','$pt','$atls','$km','$mn','$pb','$bpbd','$gp')");
 
         // Show message when user added
-        echo "User added successfully. <a href='http://localhost/program_april/dashboard.php?page=insert/calon_siswa'>View tbl_cs</a>";
+        echo "User added successfully. <a href='http://localhost/siks_ahp/dashboard.php?page=insert/calon_siswa'>View tbl_cs</a>";
     }
     ?>
 </body>

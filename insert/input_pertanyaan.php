@@ -63,7 +63,7 @@ th, td {
         echo "<tr>";      
         echo "<td>".$no++."</td>";
         echo "<td>".$user_data['nama_cs']."</td>";
-        echo "<td><a href='/program_april/insert/edit_ip.php?id=$user_data[id]'>Cetak</a>";        
+        echo "<td><a href='/siks_ahp/insert/edit_ip.php?id=$user_data[id]'>Cetak</a>";        
     }
     ?>
         </table>

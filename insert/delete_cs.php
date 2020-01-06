@@ -6,8 +6,8 @@ include_once("config.php");
 $id = $_GET['id'];
 
 // Delete user row from table based on given id
-$result = mysqli_query($mysqli, "DELETE FROM tbl_cs WHERE id=$id");
+$result = mysqli_query($mysqli, "DELETE FROM tbl_cs2 WHERE id=$id");
 
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:http://localhost/program_april/dashboard.php?page=insert/calon_siswa");
+header("Location:http://localhost/siks_ahp/dashboard.php?page=insert/calon_siswa");
 ?>

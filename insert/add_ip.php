@@ -3,7 +3,7 @@
 include_once("config.php");
 
 // Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where con !='2'");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 where con !='2'");
 ?>
 
 <html>
@@ -34,7 +34,7 @@ th, td {
 
   <div class="container" style="margin-top: 30px;"> 
   <h3>Identifikasi calon siswa</h3> <hr>
-    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan"> << Kembali</a>
+    <a class="btn btn-primary" href="http://localhost/siks_ahp/dashboard.php?page=insert/input_pertanyaan"> << Kembali</a>
     <br/><br/>
 
     <form action="add_ip.php" method="post" name="form1">
@@ -396,8 +396,8 @@ th, td {
 <label for="sel1">pilih jawaban</label>
 <select class="form-control" id="sel1" name="motivasi_4">
 <option value="a. mengisi waktu luang">a. mengisi waktu luang</option>
-<option value="b. Semi permanen, bangunan setengah tembok, lantai semen">b. Semi permanen, bangunan setengah tembok, lantai semen</option>
-<option value="c. memiliki keterampilan kerja, modal kerja, dan dapat hidup mandiri">c. memiliki keterampilan kerja, modal kerja, dan dapat hidup mandiri</option>
+<!-- <option value="b. Semi permanen, bangunan setengah tembok, lantai semen">b. Semi permanen, bangunan setengah tembok, lantai semen</option> -->
+<option value="b. memiliki keterampilan kerja, modal kerja, dan dapat hidup mandiri">b. memiliki keterampilan kerja, modal kerja, dan dapat hidup mandiri</option>
 </select>
 </div>
 <!--  -->
@@ -665,7 +665,7 @@ th, td {
 
             <tr> 
                 <td></td>
-                <td><input class="btn btn-primary" type="submit" name="Submit" value="Tambah"></td>
+                <td><input class="btn btn-primary" type="submit" name="Submit" value="Simpan"></td>
             </tr>
 
   </table>
@@ -726,9 +726,9 @@ th, td {
         // Insert user data into table
 
 
-        $result = mysqli_query($mysqli, "INSERT INTO tbl_pertanyaan(nama_cs, keadaan_lingkungan1, keadaan_lingkungan2, keadaan_lingkungan3, keadaan_lingkungan4, keadaan_lingkungan5a, keadaan_lingkungan5b, keadaan_lingkungan5c, keadaan_lingkungan6, motivasi_1, motivasi_2, motivasi_3, motivasi_4, motivasi_5, motivasi_6, motivasi_7, penggunaan_1, penggunaan_2, penggunaan_3, penggunaan_4, penggunaan_5, penggunaan_6, evaluasi_1, evaluasi_2, evaluasi_3, evaluasi_4, evaluasi_5) VALUES ('$nama_cs', '$keadaan_lingkungan1', '$keadaan_lingkungan2', '$keadaan_lingkungan3', '$keadaan_lingkungan4', '$keadaan_lingkungan5a', '$keadaan_lingkungan5b', '$keadaan_lingkungan5c', '$keadaan_lingkungan6', '$motivasi_1', '$motivasi_2', '$motivasi_3', '$motivasi_4', '$motivasi_5', '$motivasi_6', '$motivasi_7', '$penggunaan_1', '$penggunaan_2', '$penggunaan_3', '$penggunaan_4', '$penggunaan_5', '$penggunaan_6', '$evaluasi_1', '$evaluasi_2', 'evaluasi_3', 'evaluasi_4', 'evaluasi_5')");
+        $result = mysqli_query($mysqli, "INSERT INTO tbl_pertanyaan(nama_cs, keadaan_lingkungan1, keadaan_lingkungan2, keadaan_lingkungan3, keadaan_lingkungan4, keadaan_lingkungan5a, keadaan_lingkungan5b, keadaan_lingkungan5c, keadaan_lingkungan6, motivasi_1, motivasi_2, motivasi_3, motivasi_4, motivasi_5, motivasi_6, motivasi_7, penggunaan_1, penggunaan_2, penggunaan_3, penggunaan_4, penggunaan_5, penggunaan_6, evaluasi_1, evaluasi_2, evaluasi_3, evaluasi_4, evaluasi_5) VALUES ('$nama_cs', '$keadaan_lingkungan1', '$keadaan_lingkungan2', '$keadaan_lingkungan3', '$keadaan_lingkungan4', '$keadaan_lingkungan5a', '$keadaan_lingkungan5b', '$keadaan_lingkungan5c', '$keadaan_lingkungan6', '$motivasi_1', '$motivasi_2', '$motivasi_3', '$motivasi_4', '$motivasi_5', '$motivasi_6', '$motivasi_7', '$penggunaan_1', '$penggunaan_2', '$penggunaan_3', '$penggunaan_4', '$penggunaan_5', '$penggunaan_6', '$evaluasi_1', '$evaluasi_2', '$evaluasi_3', '$evaluasi_4', '$evaluasi_5')");
         // Show message when user added
-        echo "User added successfully. <a href='http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan'>View tbl_pertanyaan</a>";
+        echo "User added successfully. <a href='http://localhost/siks_ahp/dashboard.php?page=insert/input_pertanyaan'>View tbl_pertanyaan</a>";
         $result = mysqli_query($mysqli, "UPDATE tbl_cs SET con = '2' WHERE nama=$nama_cs");
     }
     ?>

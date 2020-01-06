@@ -1,1 +1,1 @@
-<h3>Selamat Datang di Sistem Pendukung Keputusan dengan AHP</h3>
+<h3><p align="center">Selamat Datang di Sistem Informasi Kesejahteraan Sosial</p></h3>

@@ -200,7 +200,7 @@ do {
         </select>
 	 </td>
       <td align="left">&nbsp;</td>
-      <td align="left" valign="bottom"><input type="submit" value="INSERT" class="btn btn-warning btn-block" /></td>
+      <td align="left" valign="bottom"><input type="submit" value="HITUNG" class="btn btn-warning btn-block" /></td>
     </tr>
   </table>
 
@@ -240,7 +240,8 @@ do {
 <td><?php 
 	$angkabaru[$i][$j]=$angka[$no];
 	$angkabaru1[$j][$i]=$angkabaru[$i][$j];
-	echo $angkabaru[$i][$j];
+	/*echo $angkabaru[$i][$j];*/
+	echo number_format($angkabaru[$i][$j],2);
 ?></td>
 
 <?php $no++; 
@@ -255,7 +256,8 @@ do {
 for($i=1; $i <= $jumlahPeserta; $i++){
       $jumlah[$i]=array_sum($angkabaru1[$i]);
 	  ?>
-      <td><?= $jumlah[$i]; ?></td>
+     <!--  <td><?= $jumlah[$i]; ?></td> -->
+      <td align="center" bgcolor="#006699"><span class="style1"><strong><?= number_format($jumlah[$i],2); ?></strong></span></td>
 <?php } ?>
     </tr>
 
@@ -304,16 +306,16 @@ for($x=1; $x <= $jumlahPeserta; $x++){
 			$angkabaru1[$j][$i]=$angkabaru[$i][$j];
 			$hitungEigen = $angkabaru[$i][$j] / $jumlah[$i]; 
 			$total += $hitungEigen;
-			echo number_format($hitungEigen,4);
+			echo number_format($hitungEigen,2);
 			$nox++; ?>      </td>
 	<?php
 
 	 } ?>
-    <td><?php  echo number_format($total,7); ?></td>
-    <td><?php $rata2 = $total / $jumlahPeserta; echo number_format($rata2,7); ?>
+    <td><?php  echo number_format($total,2); ?></td>
+    <td><?php $rata2 = $total / $jumlahPeserta; echo number_format($rata2,2); ?>
     <?php $rata += $rata2; ?>
     <input type="hidden" name="kode_kriteria" value="<?php echo $row_rs_kriteria['kode_kriteria']; ?>" />
-    <input type="hidden" name="nilai<?php echo $x; ?>" value="<?php $rata2 = $total / $jumlahPeserta; echo number_format($rata2,7); ?>" />
+    <input type="hidden" name="nilai<?php echo $x; ?>" value="<?php $rata2 = $total / $jumlahPeserta; echo number_format($rata2,2); ?>" />
     <input type="hidden" name="id<?php echo $x; ?>" value="<?php echo $x; ?>" />
     </td>
 </tr>
@@ -354,7 +356,7 @@ $lambda = 0;
 			$angkabaru1[$j][$i]=$angkabaru[$i][$j];
 			$hitungEigen = $angkabaru[$i][$j] / $jumlah[$i]; 
 			$total += $hitungEigen;
-			number_format($hitungEigen,4);
+			number_format($hitungEigen,2);
 			$noy++; 
 	 } 
   
@@ -365,12 +367,12 @@ $lambda = 0;
     <table class="table table-striped table-bordered table-hover">
       <tr>
         <td>NILAI LAMBDA MAX </td>
-        <td><strong><?php echo $lambda = number_format($lambda, 9); ?></strong></td>
+        <td><strong><?php echo $lambda = number_format($lambda, 2); ?></strong></td>
       </tr>
       <tr>
         <td>NILAI CI</td>
         <td> <strong>
-          <?php $ci = ($lambda - $jumlahPeserta) / ($jumlahPeserta - 1); echo number_format($ci,9); ?>
+          <?php $ci = ($lambda - $jumlahPeserta) / ($jumlahPeserta - 1); echo number_format($ci,2); ?>
         </strong></td>
       </tr>
       <tr>
@@ -408,7 +410,7 @@ $lambda = 0;
 		}
 		?>
         
-          <?php $cr = ($ci / $indeks); echo number_format($cr,9); ?>
+          <?php $cr = ($ci /1.91); echo number_format($cr,2); ?>
         </strong></td>
       </tr>
     </table>

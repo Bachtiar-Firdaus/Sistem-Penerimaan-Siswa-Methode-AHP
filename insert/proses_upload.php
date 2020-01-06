@@ -1,25 +1,42 @@
 <?php
+
+$databaseHost = 'localhost';
+$databaseName = 'codegoo_ahp';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+
+$id_upload = $_POST['id_upload'];
+$nama = $_POST['nama_cs'];
+
+$nama_file   = $_FILES['fupload']['name'];
+$lokasi_file = $_FILES['fupload']['tmp_name'];
+
+$fotobaru = date('dmYHis').$nama_file;
+
+
+
 // Baca lokasi file sementar dan nama file dari form (fupload)
-$lokasi_file1 = $_FILES['file_i']['tmp_name'];
-$lokasi_file2 = $_FILES['file_k']['tmp_name'];
-$file_i   = $_FILES['file_i']['name'];
-$file_k   = $_FILES['file_k']['name'];
+
 // Tentukan folder untuk menyimpan file
-$folder = "files/$file_i,$file_k";
+$folder = "files/".$nama_file;
 // tanggal sekarang
-$tgl_upload = date("Ymd");
+// $tgl_upload = date("Ymd");
 // Apabila file berhasil di upload
-if (move_uploaded_file($lokasi_file1,$lokasi_file2,"$folder")){
+if (move_uploaded_file($lokasi_file,$folder)){
+
+
   echo "Nama File : <b>$nama_file</b> sukses di upload";
   
   // Masukkan informasi file ke database
   $konek = mysqli_connect("localhost","root","","codegoo_ahp");
 
-  $query = "INSERT INTO upload2 (file_ijasah, file_ktp, nama_cs)
-            VALUES('$nama_file','$_POST[nama_cs]')";
+  $query = "INSERT INTO tbl_upload_cs (nama_file, nama_cs, tgl_upload)
+            VALUES('$nama_file', '$nama', '$fotobaru')";
             
   mysqli_query($konek, $query);
-  header("Location: http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/surat_pemanggilan_datasiswa");
+  header("Location: http://localhost/siks_ahp/dashboard.php?page=insert/upload_berkas_calon");
 die();
 }
 else{

@@ -6,6 +6,6 @@ $id = $_GET['id_kegiatan'];
 // Delete user row from table based on given id
 $result = mysqli_query($mysqli, "DELETE FROM tbl_kegiatan WHERE id_kegiatan=$id");
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan");
+header("Location:http://localhost/siks_ahp/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan");
 ?>
 

@@ -268,20 +268,7 @@ $totalRows_rs_users = mysql_num_rows($rs_users);
 
               <!--  akhir body-->
   		 
-         
-         <!-- <?php
-		   if(isset($_GET["page"]) && $_GET["page"] != "home"){
-			if(file_exists(htmlentities($_GET["page"]).".php")){
-				include(htmlentities($_GET["page"]).".php");
-			}else{
-				include("404.php");
-			}
-		   }else{
-		  include("home.php");
-		  }		
-		   
-		?> -->
-          
+     
       
             </div>
             <!-- /.box-body -->
@@ -302,6 +289,7 @@ $totalRows_rs_users = mysql_num_rows($rs_users);
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
+
 <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="assets/bower_components/dist/js/bootstrap.min.js"></script>

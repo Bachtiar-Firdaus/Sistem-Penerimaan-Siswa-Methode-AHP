@@ -6,20 +6,22 @@ include_once("config.php");
 if(isset($_POST['update']))
 {   
     $id_kegiatan = $_POST['id_kegiatan'];
+    // $nik = $_POST['nik'];
 
     $nama_siswa = $_POST['nama_siswa'];
-    $k_mental = $_POST['lk_mental'];
+    $nama_pendamping = $_POST['nama_pendamping'];
+    $k_mental = $_POST['k_mental'];
     $k_sosial = $_POST['k_sosial'];
     $k_keterampilan = $_POST['k_keterampilan'];
     $jurusan = $_POST['jurusan'];
-    $tanggal = $_POST['tanggal'];
+    $tanggall = $_POST['tanggall'];
 
 
     // update user data
-    $result = mysqli_query($mysqli, "UPDATE tbl_kegiatan SET  nama_siswa ='$nama_siswa', k_mental = '$k_mental', k_sosial = '$k_sosial', k_keterampilan = '$k_keterampilan', jurusan = '$jurusan',tanggal = '$tanggal' WHERE id_kegiatan=$id_kegiatan");
+    $result = mysqli_query($mysqli, "UPDATE tbl_kegiatan SET  nama_siswa ='$nama_siswa',nama_pendamping ='$nama_pendamping', k_mental = '$k_mental', k_sosial = '$k_sosial', k_keterampilan = '$k_keterampilan', jurusan = '$jurusan',tanggall = '$tanggall' WHERE id_kegiatan=$id_kegiatan");
 
     // Redirect to homepage to display updated user in list
-    header("Location:http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan");
+    header("Location:http://localhost/siks_ahp/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan");
 }
 ?>
 <?php
@@ -32,12 +34,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan WHERE id_kegiatan=$i
 
 while($user_data = mysqli_fetch_array($result))
 {
+    // $nik = $user_data['nik'];
     $nama_siswa = $user_data['nama_siswa'];
+    $nama_pendamping = $user_data['nama_pendamping'];
     $k_mental = $user_data['k_mental'];
     $k_sosial = $user_data['k_sosial'];
     $k_keterampilan = $user_data['k_keterampilan'];
-    $jurusan = $user_data['jurusan'];
-    $tanggal = $user_data['tanggal'];
+    $jurusan = $user_data['jurusann'];
+    $tanggall = $user_data['tanggall'];
 
 }
 ?>
@@ -50,39 +54,74 @@ while($user_data = mysqli_fetch_array($result))
 <body>
     <div class="container" style="margin-top: 30px;"> 
         <h3>Edit Kegiatan Siswa</h3><hr>
-    <a class="btn btn-primary" href="http://localhost/program_april/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan"> << Home</a>
+    <a class="btn btn-primary" href="http://localhost/siks_ahp/dashboard_pendamping.php?page=view_pendamping/kelola_kegiatan"> << Kembali</a>
     <br/><br/>
 
     <form name="update_user" method="post" action="edit_kk.php">
 
+        
+
         <div class="form-group">
     <label for="exampleFormControlInput1">Nama Siswa</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan kegiatan mental" name="nama_siswa" value=<?php echo $nama_siswa;?>>
+    <input type="text" class="form-control" id="exampleFormControlInput1" disabled placeholder="Masukan kegiatan mental" name="nama_siswa" value="<?php echo $nama_siswa;?>">
   </div>
 
+  <!-- <div class="form-group">
+    <label for="exampleFormControlInput1">Nama pendamping</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama_pendamping" name="nama_pendamping" value="<?php echo $nama_pendamping;?>">
+  </div> -->
+
+  <div class="form-group">
+    <label>Pilih pendamping</label>
+<select class="form-control" name ="nama_pendamping" >
+   
+    <?php
+
+    $databaseHost = 'localhost';
+$databaseName = 'codegoo_ahp';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+
+
+
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_pendamping ORDER BY id DESC ");
+
+
+
+     while($user_data = mysqli_fetch_array($result)) {  ?>
+    <option value="<?php  echo $user_data['nama_pendamping'];?>"><?php  echo "<td>".$user_data['nama_pendamping'];?></option>
+    <?php     }
+      ?>
+</select>
+</div>
+
             <div class="form-group">
-    <label for="exampleFormControlInput1">Laporan Mental</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan kegiatan mental" name="k_mental" value=<?php echo $k_mental;?>>
+    <label for="exampleFormControlInput1">Bimbingan Ketrampilan</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan kegiatan mental" name="k_mental" value="<?php echo $k_mental;?>">
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlInput1">Laporan Sosial</label>
+    <label for="exampleFormControlInput1">Bimbingan Mental</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan kegiatan sosial" name="k_sosial" value=<?php echo $k_sosial;?>>
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlInput1">Laporan Keterampilan</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukan kegiatan keterampilan" name="k_keterampilan" value=<?php echo $k_keterampilan;?>>
+    <label for="exampleFormControlInput1">Bimbingan Sosial dan Fisik</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="masukan kegiatan keterampilan" name="k_keterampilan" value="<?php echo $k_keterampilan;?>">
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput1">Jurusan</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan jurusan" name="jurusan" value=<?php echo $jurusan;?>>
+ 
+</select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput1">Tanggal</label>
-    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Tanggal" name="tanggal" value=<?php echo $tanggal;?> >
+    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Tanggal" name="tanggall" value=<?php echo $tanggall;?> >
   </div>
 
             <tr>

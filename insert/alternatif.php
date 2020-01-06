@@ -1,3 +1,4 @@
+
 <?php  
 
   
@@ -65,7 +66,40 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
   <table width="100%" height="75">
     <tr valign="baseline">
       <td nowrap="nowrap">Nama</td>
-      <td><input type="text" name="nama" value="" size="32" class="form-control" /></td>
+      <td>
+
+        <div class="form-group">
+
+        <select name="nama" class="form-control">
+
+<?php
+
+$databaseHost = 'localhost';
+$databaseName = 'codegoo_ahp';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+
+
+// Fetch all tbl_cs data from database
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 where con !='2'");
+
+             while($user_data = mysqli_fetch_array($result)) {  ?>
+
+    <option><?php  echo $user_data['nama'];?></option>
+
+  <?php     
+    }
+  ?>
+
+  </select>
+  </div>
+        <!-- <input type="text" name="nama" value="" size="32" class="form-control" /> -->
+
+
+
+      </td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap">&nbsp;</td>
@@ -81,6 +115,8 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
   <tr align="center" bgcolor="#003366">
     <th width="5%"><span class="style1">NO.</span></th>
     <th width="76%"><span class="style1">NAMA</span></th>
+    <th width="5%"><span class="style1">ID</span></th>
+    <th width="19%"><span class="style1"> </span></th> 
     <th width="19%"><span class="style1"> </span></th> 
   </tr>
   </thead>
@@ -88,6 +124,7 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
     <tr>
       <td align="center"><?php echo $no++; ?></td>
       <td><?php echo $row_rs_peserta['nama']; ?></td>
+      <td><?php echo "00" .$row_rs_peserta['id']+3 ?></td>
       <td><a href="?page=update/alternatif&id=<?php echo $row_rs_peserta['id']; ?>">Edit Peserta</a></td>
       <td><a href="insert/delete_alternatife.php?id=<?php echo $row_rs_peserta['id']; ?>">Delete</a></td>
     </tr>

@@ -15,7 +15,7 @@
 
           <p><?= $row_rs_users['fullname']; ?></p>
 
-          <a href="?page=config/kode&id=1"><i class="fa fa-circle text-success"></i> PS UPTD</a>
+          <a href="?page=config/kode&id=1"><i class="fa fa-circle text-success"></i>Admin</a>
 
         </div>
 
@@ -37,7 +37,7 @@
 
           <a href="#">
 
-            <i class="fa fa-edit"></i> <span>Kriteria</span>
+            <i class="fa fa-edit"></i> <span>Kelola Kriteria</span>
 
             <span class="pull-right-container">
 
@@ -45,7 +45,7 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="?page=insert/kriteria"><i class="fa fa-circle-o"></i>Data Kriteria</a></li>
+            <li><a href="?page=insert/kriteria"><i class="fa fa-circle-o"></i>Input Data Kriteria</a></li>
             <li><a href="?page=kriteria"><i class="fa fa-circle-o"></i>Hitung kriteria</a></li>
           </ul>
 
@@ -53,7 +53,7 @@
 
 
         <li><a href="?page=view_ps_uptd/perhitungan"><i class="fa fa-table"></i> <span>Perhitungan</span></a> </li>
-        <li><a href="?page=view_ps_uptd/data_siswa"><i class="fa fa-table"></i> <span>Data siswa</span></a> </li>
+        <li><a href="?page=view_ps_uptd/data_siswa"><i class="fa fa-table"></i> <span>Kelola Data siswa</span></a> </li>
         
 
         <li class="treeview">
@@ -75,6 +75,7 @@
         </li>
 
         <li><a href="?page=view_ps_uptd/surat_pemanggilan_datasiswa"><i class="fa fa-table"></i> <span>Upload surat</span></a> </li>
+        <li><a href="?page=view_ps_uptd/rekapan_honor_pendamping"><i class="fa fa-table"></i> <span>Rekapan Honor Pendamping</span></a> </li>
 
         <!-- <li class="treeview">
 

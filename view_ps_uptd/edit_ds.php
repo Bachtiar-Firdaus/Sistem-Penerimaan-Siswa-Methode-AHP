@@ -6,6 +6,7 @@ include_once("config.php");
 if(isset($_POST['update']))
 {   
     $id = $_POST['id'];
+    $nik = $_POST['nik'];
 
     $nama = $_POST['nama'];
     $nokk = $_POST['nokk'];
@@ -14,10 +15,10 @@ if(isset($_POST['update']))
     $asrama = $_POST['asrama'];
 
     // update user data
-    $result = mysqli_query($mysqli, "UPDATE tbl_cs SET  nokk = '$nokk', nik = '$nik', jurusan = '$jurusan', asrama = '$asrama' WHERE id=$id");
+    $result = mysqli_query($mysqli, "UPDATE tbl_cs2 SET  nokk = '$nokk', nik = '$nik', jurusan = '$jurusan', asrama = '$asrama' WHERE id=$id");
 
     // Redirect to homepage to display updated user in list
-    header("Location: http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/data_siswa");
+    header("Location: http://localhost/siks_ahp/dashboard_ps_uptd.php?page=view_ps_uptd/data_siswa");
 }
 ?>
 <?php
@@ -26,7 +27,7 @@ if(isset($_POST['update']))
 $id = $_GET['id'];
 
 // Fetech user data based on id
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs WHERE id=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 WHERE id=$id");
 
 while($user_data = mysqli_fetch_array($result))
 {
@@ -70,14 +71,14 @@ input[type=text] {
     <div class="container" style="margin-top: 30px">
         <h2>Tambah data KK, NIK, Jurusan, Asrama</h2>
     <hr>
-    <!-- <a class="btn btn-secondary" href="http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/data_siswa"> << Home</a>
+    <!-- <a class="btn btn-secondary" href="http://localhost/siks_ahp/dashboard_ps_uptd.php?page=view_ps_uptd/data_siswa"> << Home</a>
     <br/><br/> -->
 
     <form name="update_user" method="post" action="edit_ds.php">
 
             
     <label for="exampleFormControlInput1">Nama</label> 
-    <input type="text" class="form-control" id="exampleFormControlInput1" disabled placeholder="Masukan nama siswa" name="nama" value=<?php echo $nama;?>>
+    <input type="text" class="form-control" id="exampleFormControlInput1" disabled placeholder="Masukan nama siswa" name="nama" value="<?php echo $nama;?>">
   
 
   
@@ -86,17 +87,18 @@ input[type=text] {
   
 
   
-    <!-- <label for="exampleFormControlInput1">NIK</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor nik" name="nik" value=<?php echo $nik;?>> -->
+    <label for="exampleFormControlInput1">Nomor Induk</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nomor induk" name="nik" value=<?php echo $nik;?>>
   
 
   
     <div class="form-group">
   <label for="sel1">Pilih jurusan :</label>
   <select class="form-control" id="sel1" name="jurusan">
-    <option value="menjahit">Menjahit</option>
-    <option value="eletronik">Eletronik</option>
-    <option value="motor">Motor</option>
+    <option value="Menjahit">Menjahit</option>
+    <option value="Servis Elektronik">Servis Elektronik</option>
+    <option value="Servis Motor">Servis Motor</option>
+    <option value="Tata Rias">Tata Rias</option>
   </select>
 </div>
   

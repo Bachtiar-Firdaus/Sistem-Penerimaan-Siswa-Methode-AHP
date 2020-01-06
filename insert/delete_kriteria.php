@@ -10,5 +10,5 @@ $id = $_GET['id_kriteria'];
 $result = mysqli_query($mysqli, "DELETE FROM tb_kriteria WHERE id_kriteria=$id");
 
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:http://localhost/program_april/dashboard_ps_uptd.php?page=insert/kriteria");
+header("Location:http://localhost/siks_ahp/dashboard_ps_uptd.php?page=insert/kriteria");
 ?>

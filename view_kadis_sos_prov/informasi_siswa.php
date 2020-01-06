@@ -11,7 +11,7 @@ include_once("\insert\config.php");
 // $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
 
 // $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs order by id DESC ");
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where keterangan = 'diterima' ");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 where keterangan = 'diterima' ");
 ?>
 <style type="text/css">
 	tr, td,th{
@@ -32,7 +32,29 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where keterangan = 'diteri
 <h3>Informasi Siswa</h3><hr><br>
 
 
-<form method="post" action="view_kadis_sos_prov/cetak_info_siswa.php">
+<!-- <form method="post" action="view_kadis_sos_prov/cetak_info_siswa.php">
+ -->
+    <form method="post" action="view_ps_uptd/sortir_data_siswa.php">
+
+  <!--     <select name="nama">
+  <option value="">Pilih nama</option>
+
+  <?php
+
+  include_once("\insert\config.php");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 where keterangan = 'diterima' "); 
+
+
+
+
+             while($user_data = mysqli_fetch_array($result)) {  ?>
+
+    <option value="<?php  echo $user_data['nama'];?>"><?php  echo $user_data['nama'];?></option>
+
+  <?php     
+    }
+  ?>
+</select> -->
 
   <!-- <select name="keterangan">
   <option value="diterima">Diterima</option>
@@ -42,12 +64,25 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where keterangan = 'diteri
 </select> -->
 
 <select name="jurusan">
-  <option value="menjahit">Menjahit</option>
-  <option value="motor">Motor</option>
-  <option value="elektronik">Elektronik</option>
+  <option value="Menjahit">Menjahit</option>
+  <option value="Servis Motor">Servis Motor</option>
+  <option value="Servis Elektronik">Servis Elektronik</option>
+   <option value="Tata Rias">Tata Rias</option>
 </select>
 
-<input type="date" name="tanggal">
+<!-- <input type="date" name="tanggal"> -->
+
+<select name="tanggal">
+  <option value="">Pilih Tahun</option>
+  <option value="2019">2021</option>
+  <option value="2019">2020</option>
+  <option value="2019">2019</option>
+  <option value="2018">2018</option>
+  <option value="2017">2017</option>
+  <option value="2016">2016</option>
+  <option value="2016">2015</option>
+  <option value="2016">2014</option>
+</select>
 
 <tr>
                 <td><input class="btn btn-primary" type="submit" name="search" value="Sortir Data"></td>
@@ -66,12 +101,18 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where keterangan = 'diteri
 		<th>Jurusan</th>
 		<th>Kabupaten</th>
 		<th>Keterangan</th>
-		<th>Tanggal</th>
+		<th>Tahun</th>
 	
      </tr>
      </thead>
      <tbody>
     <?php  
+    // Create database connection using config file
+include_once("\insert\config.php");
+
+// Fetch all tbl_cs data from database
+// $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 where  keterangan = 'diterima' ");
     $no = "1";
     while($user_data = mysqli_fetch_array($result)) {         
         echo "<tr>";     
@@ -80,13 +121,33 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs where keterangan = 'diteri
         echo "<td>".$user_data['jurusan']."</td>"; 
         echo "<td>".$user_data['alko']."</td>";        
         echo "<td>".$user_data['keterangan']."</td>";        
-        echo "<td>".$user_data['tanggal']."</td></tr>";        
+        // echo "<td>".$user_data['tanggal']."</td></tr>";   
+        echo "<td>". date('Y',strtotime($user_data['tanggal']))."</td></tr>";       
     }
     ?>
     </tbody>
 </table><br><br>
 
-<a href="view_ps_uptd\cetak_ds.php" class="btn btn-primary">Cetak</a>
+<form method="post" action="view_ps_uptd/cetak_ds.php"> 
+ 
+<select name="tanggal">
+  <option value="">Pilih Tahun</option>
+  <option value="2021">2021</option>
+  <option value="2020">2020</option>
+  <option value="2019">2019</option>
+  <option value="2018">2018</option>
+  <option value="2017">2017</option>
+  <option value="2016">2016</option>
+  <option value="2016">2015</option>
+  <option value="2015">2014</option>
+</select>
+
+<input class="btn btn-primary" type="submit" name="cetak" value="Cetak">
+
+
+</form>
+
+<!-- <a href="view_ps_uptd\cetak_ds.php" class="btn btn-primary">Cetak</a> -->
 
 </div>
 

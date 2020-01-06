@@ -56,7 +56,7 @@ if ($totalRows_rs_kriteria == 0) {
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="left">&nbsp;</td>
-      <td valign="bottom"><input type="submit" value="Edit Kriteria" class="btn btn-success" />
+      <td valign="bottom"><input type="submit" value="Update" class="btn btn-success" />
        <!-- <a href="?page=insert/#" class="btn btn-danger">Start Begin</a></td> -->
     </tr>
   </table>
@@ -79,7 +79,7 @@ if ($totalRows_rs_kriteria == 0) {
       <td align="center"><?php echo $no++; ?></td>
       <td><?php echo $row_rs_kriteria['kode_kriteria']; ?></td>
       <td><a href="?page=alternatif&amp;kode=<?php echo $row_rs_kriteria['kode_kriteria']; ?>"><?php echo $row_rs_kriteria['nama_kriteria']; ?></a></td>
-      <td align="center"><a href="?page=update/kriteria&amp;id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Change</a></td>
+     <!--  <td align="center"><a href="?page=update/kriteria&amp;id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Update</a></td> -->
     </tr>
     <?php } while ($row_rs_kriteria = mysql_fetch_assoc($rs_kriteria)); ?>
   </table>

@@ -15,7 +15,7 @@
 
           <p><?= $row_rs_users['fullname']; ?></p>
 
-          <a href="?page=config/kode&id=1"><i class="fa fa-circle text-success"></i> PSM KAB</a>
+          <a href="?page=config/kode&id=1"><i class="fa fa-circle text-success"></i>Admin</a>
 
         </div>
 
@@ -30,7 +30,7 @@
 
           <a href="#">
 
-            <i class="fa fa-edit"></i> <span>Keloa Pendaftaran</span>
+            <i class="fa fa-edit"></i> <span>Kelola Calon Siswa</span>
 
             <span class="pull-right-container">
 
@@ -38,7 +38,7 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>Edit Data Calon Siswa</a></li>
+            <li><a href="?page=insert/calon_siswa"><i class="fa fa-circle-o"></i>Input Data Calon Siswa</a></li>
             <li><a href="?page=insert/input_pertanyaan"><i class="fa fa-circle-o"></i>Input Pertanyaan</a></li>
             <li><a href="?page=insert/upload_berkas_calon"><i class="fa fa-circle-o"></i>Upload Berkas</a></li>
           </ul>
@@ -49,7 +49,7 @@
 
           <a href="#">
 
-            <i class="fa fa-edit"></i> <span>Master Data</span>
+            <i class="fa fa-edit"></i> <span>Kelola Alternatif</span>
 
             <span class="pull-right-container">
 
@@ -59,7 +59,7 @@
 
             <li><a href="?page=insert/intensitas"><i class="fa fa-circle-o"></i> Tabel Intensitas</a></li>
             <!-- <li><a href="?page=insert/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li> -->
-            <li><a href="?page=insert/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
+            <li><a href="?page=insert/alternatif"><i class="fa fa-circle-o"></i>Input Alternatif</a></li>
           </ul>
 
         </li>

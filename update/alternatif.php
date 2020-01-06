@@ -43,7 +43,7 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap">&nbsp;</td>
-      <td valign="bottom"><input type="submit" value="Simpan" class="btn btn-primary"/></td>
+      <td valign="bottom"><input type="submit" value="Update" class="btn btn-primary"/></td>
     </tr>
   </table>
   <input type="hidden" name="MM_update" value="form1" />
@@ -63,7 +63,7 @@ $totalRows_rs_peserta = mysql_num_rows($rs_peserta);
     <tr>
       <td align="center"><?php echo $no++; ?></td>
       <td><?php echo $row_rs_id['nama']; ?></td>
-      <td><a href="?page=update/alternatif&id=<?php echo $row_rs_id['id']; ?>">Edit Peserta</a></td>
+    <!--   <td><a href="?page=update/alternatif&id=<?php echo $row_rs_id['id']; ?>">Edit Peserta</a></td> -->
     </tr>
     <?php } while ($row_rs_id = mysql_fetch_assoc($rs_id)); ?>
 </table> 

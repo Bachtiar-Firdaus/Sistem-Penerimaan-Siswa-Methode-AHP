@@ -6,7 +6,7 @@
 
     </div>
 
-    <strong>Copyright &copy; <?= date('Y'); ?> <a href="https://codeego.com"></a>.</strong> All rights reserved.
+    <strong>Copyright &copy; <?= date('Y'); ?> <a href="https://codeego.com"></a>.</strong> SIKS AHP.
 
   </footer>
 

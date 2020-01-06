@@ -15,7 +15,7 @@
 
           <p><?= $row_rs_users['fullname']; ?></p>
 
-          <a href="?page=config/kode&id=1"><i class="fa fa-circle text-success"></i> Pendamping</a>
+          <a href="?page=config/kode&id=1"><i class="fa fa-circle text-success"></i>Admin</a>
 
         </div>
 
@@ -35,7 +35,11 @@
 
         
 
-        <li><a href="?page=view_pendamping/kelola_kegiatan"><i class="fa fa-table"></i> <span>Kelola Kegiatan</span></a> </li>
+        <li><a href="?page=view_pendamping/kelola_kegiatan"><i class="fa fa-table"></i> <span>Kelola Kegiatan Siswa</span></a> </li>
+        <li><a href="?page=view_pendamping/keterampilan_menjahit"><i class="fa fa-table"></i> <span>Keterampilan Menjahit</span></a> </li>
+        <li><a href="?page=view_pendamping/keterampilan_tatarias"><i class="fa fa-table"></i> <span>Keterampilan Tata Rias</span></a> </li>
+        <li><a href="?page=view_pendamping/keterampilan_servismotor"><i class="fa fa-table"></i> <span>Keterampilan Servis Motor</span></a> </li>
+        <li><a href="?page=view_pendamping/keterampilan_elektronik"><i class="fa fa-table"></i> <span>Keterampilan Elektronik</span></a> </li>
         
 
       </ul>

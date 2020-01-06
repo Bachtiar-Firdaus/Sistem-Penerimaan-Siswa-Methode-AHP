@@ -5,7 +5,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tbl_pertanyaan WHERE id=$id");
 
 while($user_data = mysqli_fetch_array($result))
 {       $nama_cs = $user_data['nama_cs']; 
-        $nama_a = $user_data['nama_a']; 
+      /*  $nama_a = $user_data['nama_a']; 
         $nama_i = $user_data['nama_i']; 
         $umur_a = $user_data['umur_a']; 
         $umur_a_t = $user_data['umur_a_t']; 
@@ -21,7 +21,7 @@ while($user_data = mysqli_fetch_array($result))
         $alamat_i_kab = $user_data['alamat_i_kab']; 
         $pekerjaan_a = $user_data['pekerjaan_a']; 
         $pekerjaan_i = $user_data['pekerjaan_i']; 
-        $jumlah_s = $user_data['jumlah_s']; 
+        $jumlah_s = $user_data['jumlah_s']; */
         $keadaan_lingkungan1 = $user_data['keadaan_lingkungan1']; 
         $keadaan_lingkungan2 = $user_data['keadaan_lingkungan2']; 
         $keadaan_lingkungan3 = $user_data['keadaan_lingkungan3']; 
@@ -75,7 +75,7 @@ th, td {
 </style>
 
 <body>
-    <a class="btn btn-primary" href="http://localhost/program_april/dashboard.php?page=insert/input_pertanyaan">back</a>
+    <a class="btn btn-primary" href="http://localhost/siks_ahp/dashboard.php?page=insert/input_pertanyaan">Kembali</a>
     <br/><br/>
         <table border="0">
 

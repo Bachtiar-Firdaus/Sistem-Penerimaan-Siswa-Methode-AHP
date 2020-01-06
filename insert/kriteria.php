@@ -95,7 +95,7 @@ if ($totalRows_rs_kriteria == 0) {
         <td align="center"><?php echo $no++; ?></td>
         <td><?php echo $row_rs_kriteria['kode_kriteria']; ?></td>
         <td><a href="?page=alternatif&kode=<?php echo $row_rs_kriteria['kode_kriteria']; ?>"><?php echo $row_rs_kriteria['nama_kriteria']; ?></a></td>
-        <td align="center"><a href="?page=update/kriteria&id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Change</a></td>
+        <td align="center"><a href="?page=update/kriteria&id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Edit</a></td>
 
         <td align="center"><a href="insert/delete_kriteria.php?id_kriteria=<?php echo $row_rs_kriteria['id_kriteria']; ?>">Delete</a></td>
         

@@ -10,5 +10,5 @@ $id = $_GET['id'];
 $result = mysqli_query($mysqli, "DELETE FROM tbl_cs WHERE id=$id");
 
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:http://localhost/program_april/dashboard.php?page=insert/alternatif");
+header("Location:http://localhost/siks_ahp/dashboard.php?page=insert/alternatif");
 ?>

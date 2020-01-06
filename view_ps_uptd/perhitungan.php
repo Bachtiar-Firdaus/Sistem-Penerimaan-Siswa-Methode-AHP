@@ -10,14 +10,14 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $kosong1 = "TRUNCATE TABLE tb_kriteria";
+  // $kosong1 = "TRUNCATE TABLE tb_kriteria";
   $kosong2 = "TRUNCATE TABLE tb_result"; 
   $kosong3 = "TRUNCATE TABLE tbl_cs"; 
-  $kosong4 = "TRUNCATE TABLE temp_nilai"; 
+  // $kosong4 = "TRUNCATE TABLE temp_nilai";
   $kosong5 = "TRUNCATE TABLE temp_nilai_peserta";
 
-  mysql_select_db($database_koneksi, $koneksi);
-  $Result1 = mysql_query($kosong1, $koneksi) or die(mysql_error());
+  // mysql_select_db($database_koneksi, $koneksi);
+  // $Result1 = mysql_query($kosong1, $koneksi) or die(mysql_error());
   
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($kosong2, $koneksi) or die(mysql_error());
@@ -25,8 +25,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($kosong3, $koneksi) or die(mysql_error());
   
-  mysql_select_db($database_koneksi, $koneksi);
-  $Result1 = mysql_query($kosong4, $koneksi) or die(mysql_error());
+  // mysql_select_db($database_koneksi, $koneksi);
+  // $Result1 = mysql_query($kosong4, $koneksi) or die(mysql_error());
   
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($kosong5, $koneksi) or die(mysql_error());
@@ -146,7 +146,7 @@ INNER JOIN tb_peserta USING(id_peserta) GROUP BY id_peserta*/
 include_once("view_ps_uptd\config.php");
 
 // $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2");
 // Fetch all tbl_cs data from database
 
 // $total = mysqli_query($mysqli, "SELECT * FROM view_total ORDER BY total DESC limit 2");
@@ -200,7 +200,7 @@ th, td {
         echo "<td>".$user_data['alko']."</td>"; 
         echo "<td>".$user_data['keterangan']."</td>"; 
         echo "<td>".$user_data['tot']."</td>"; 
-        echo "<td><a href='/program_april/view_ps_uptd/edit_tot_cs.php?id=$user_data[id]'>Edit</a></td></tr>";        
+        echo "<td><a href='/siks_ahp/view_ps_uptd/edit_tot_cs.php?id=$user_data[id]'>Edit</a></td></tr>";        
     }
     ?>
     </tbody>

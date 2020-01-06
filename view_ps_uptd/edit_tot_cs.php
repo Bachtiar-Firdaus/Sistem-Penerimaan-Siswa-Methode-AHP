@@ -13,10 +13,10 @@ if(isset($_POST['update']))
     $tot = $_POST['tot'];
 
     // update user data
-    $result = mysqli_query($mysqli, "UPDATE tbl_cs SET  tot = '$tot' , keterangan = '$keterangan' , nama = '$nama' WHERE id=$id");
+    $result = mysqli_query($mysqli, "UPDATE tbl_cs2 SET  tot = '$tot' , keterangan = '$keterangan' , nama = '$nama' WHERE id=$id");
 
     // Redirect to homepage to display updated user in list
-    header("Location: http://localhost/program_april/dashboard_ps_uptd.php?page=view_ps_uptd/perhitungan#");
+    header("Location: http://localhost/siks_ahp/dashboard_ps_uptd.php?page=view_ps_uptd/perhitungan#");
 }
 ?>
 <?php
@@ -25,7 +25,7 @@ if(isset($_POST['update']))
 $id = $_GET['id'];
 
 // Fetech user data based on id
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs WHERE id=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 WHERE id=$id");
 
 while($user_data = mysqli_fetch_array($result))
 {
@@ -67,7 +67,7 @@ input[type=text] {
     <form name="update_user" method="post" action="edit_tot_cs.php">
 
       <label for="exampleFormControlInput1">Nama</label> 
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama siswa" name="nama" readonly value=<?php echo $nama;?>>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama siswa" name="nama" readonly value="<?php echo $nama;?>">
 
     <div class="form-group">
   <label for="sel1">Pilih keterangan :</label>

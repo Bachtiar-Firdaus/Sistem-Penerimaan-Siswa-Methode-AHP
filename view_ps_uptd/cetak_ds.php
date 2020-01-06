@@ -3,12 +3,32 @@
 include_once("config.php");
 
 // Fetch all tbl_cs data from database
-$result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY id DESC");
+// $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs2 ORDER BY id DESC");
+
+if (isset($_POST['cetak'])) {
+  // $jurusan = $_POST['jurusan'];
+  // $nama = $_POST['nama'];
+  $tanggal = $_POST['tanggal'];
+  // $jurusan = $_POST['jurusan'];
+  // $keterangan = $_POST['keterangan'];
+
+  // $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
+
+  $query = mysqli_query($mysqli, " SELECT * FROM tbl_cs2 WHERE year(tanggal) = '$tanggal' and keterangan = 'diterima'");
+
+  // $query = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 20");
+
+  $count = mysqli_num_rows($query);
+  $row_query = mysqli_fetch_array($query);
+
+}
+
 ?>
 <style type="text/css">
 	table, td, th {  
   border: 1px solid black;
   text-align: left;
+  padding: 10px;
 }
 
 table {
@@ -22,14 +42,50 @@ table {
     text-align: -webkit-center;
   }
 
-th, td {
-  padding: 7px;
-}
+.cop{
+    line-height: 6px;
+
+  }
+  .cop2{
+    line-height: 2px;
+
+  }
+  .cop3{
+    line-height: 4px;
+
+  }
 </style>
 
-<div class="containeredit">
+<div class="container" style="margin-top: 30px;" class="text-center">
 
-<h3>Rekap Data Penerimaan Siswa</h3><br>
+
+       
+
+<div class="row" style="height: 124px;">
+
+  <h3 align="center" class="cop"><b>PEMERINTAH PROVINSI LAMPUNG</b></h3>
+    <h3 align="center" class="cop"><b>DINAS SOSIAL</b></h3>
+    <p align="center" class="cop2">Jalan Basuki Rahmat NO.72 Telp. (0721) 481600 Fax. (0721) 483692</p>
+    <p align="center" class="cop2">http//dinsos.lampungprov.go.id</p>
+    <p align="center" class="cop2">BANDAR LAMPUNG <?php echo "".date('Y', strtotime($row_query['tanggal'])).""; ?> </p>
+    <p align="center" class="cop2" style="position: relative;
+    top: -19px;
+    right: -438px;"><b>Kode Pos :35215</b></p>
+
+
+    
+
+    <img src="../img/logo.jpg" style="position: relative;
+    left: 157px;
+    top: -136px;
+    width: 91px;">
+    
+  </div>
+
+  <hr style="height: 3px;
+    background: black;">
+
+    <h4 align="center" class="cop3"><u>LAPORAN DATA SISWA </u></h4>
 
 
 
@@ -50,14 +106,35 @@ th, td {
 		<th>Jurusan</th>
 		<th>Asrama</th>
     <th>Keterangan</th>
-    <th>Tanggal</th>
+    <th>Tahun</th>
 	</tr>
      </thead>
 
      <tbody>
     <?php  
+    include_once("config.php");
+
+// Fetch all tbl_cs data from database
+// $result = mysqli_query($mysqli, "SELECT * FROM tbl_kegiatan ORDER BY id_kegiatan DESC");
+
+if (isset($_POST['cetak'])) {
+  // $jurusan = $_POST['jurusan'];
+  $tanggal = $_POST['tanggal'];
+  // $nama_siswa = $_POST['nama_siswa'];
+
+  // $result = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 2");
+
+  $query = mysqli_query($mysqli, " SELECT * FROM tbl_cs2 WHERE year(tanggal) = '$tanggal'");
+
+  // $query = mysqli_query($mysqli, "SELECT * FROM tbl_cs ORDER BY tot DESC limit 20");
+
+  $result = mysqli_num_rows($query);
+
+  // $row_query = mysqli_fetch_array($query);
+
+}
     $no = "1";
-    while($user_data = mysqli_fetch_array($result)) {         
+    while($user_data = mysqli_fetch_array($query)) {         
         echo "<tr>";     
         echo "<td>".$no++."</td>";
         echo "<td>".$user_data['nama']."</td>"; 
@@ -72,7 +149,8 @@ th, td {
         echo "<td>".$user_data['jurusan']."</td>";          
         echo "<td>".$user_data['asrama']."</td>";           
         echo "<td>".$user_data['keterangan']."</td>";           
-        echo "<td>".$user_data['tanggal']."</td>";           
+        // echo "<td>".$user_data['tanggal']."</td>"; 
+        echo "<td>". date('Y',strtotime($user_data['tanggal']))."</td></tr>";           
     }
     ?>
     </tbody>

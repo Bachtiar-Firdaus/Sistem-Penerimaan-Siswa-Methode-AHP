@@ -6,14 +6,14 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $kosong1 = "TRUNCATE TABLE tb_kriteria";
+  // $kosong1 = "TRUNCATE TABLE tb_kriteria";
   $kosong2 = "TRUNCATE TABLE tb_result"; 
   $kosong3 = "TRUNCATE TABLE tbl_cs"; 
-  $kosong4 = "TRUNCATE TABLE temp_nilai"; 
+  // $kosong4 = "TRUNCATE TABLE temp_nilai";
   $kosong5 = "TRUNCATE TABLE temp_nilai_peserta";
 
-  mysql_select_db($database_koneksi, $koneksi);
-  $Result1 = mysql_query($kosong1, $koneksi) or die(mysql_error());
+  // mysql_select_db($database_koneksi, $koneksi);
+  // $Result1 = mysql_query($kosong1, $koneksi) or die(mysql_error());
   
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($kosong2, $koneksi) or die(mysql_error());
@@ -21,8 +21,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($kosong3, $koneksi) or die(mysql_error());
   
-  mysql_select_db($database_koneksi, $koneksi);
-  $Result1 = mysql_query($kosong4, $koneksi) or die(mysql_error());
+  // mysql_select_db($database_koneksi, $koneksi);
+  // $Result1 = mysql_query($kosong4, $koneksi) or die(mysql_error());
   
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($kosong5, $koneksi) or die(mysql_error());
